@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Respostas">
+
+    <ImageView
+        android:layout_width="418dp"
+        android:layout_height="173dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:background="@drawable/mariele"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="82dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/aclonica"
+        android:text="Caso Marielle"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="36sp"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="262dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:padding="15dp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="274dp">
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_thin"
+            android:text="Marielle tem uma história de luta e teve que amadurecer cedo. Marielle nasceu no Complexo da Maré, na zona norte do Rio. Com apenas 11 anos começou a trabalhar para ajudar os pais. Aos 18 anos engravidou e no mesmo ano começou a fazer cursinho pré-vestibular. Passou por um trauma gigantesco quando sua melhor amiga morreu com um tiro de bala perdida na Maré. Foi aí que ela começou a se interessar pelas causas sociais. Marielle se formou em Ciências Sociais, fez mestrado e logo já estava inserida no meio político. Anos depois, como vereadora, tinha projetos de lei que visava proteger as classes menos valorizadas da sociedade. Projeto contra assédio, para criação de creches noturnas, entre outros projetos eram o que moviam Marielle para o desenvolvimento de uma sociedade mais humanitária."
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:layout_editor_absoluteY="326dp" />
+    </ScrollView>
+
+
+</RelativeLayout>

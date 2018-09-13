@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="vostore.apptualidade">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="AppTualidade"
+        android:noHistory="false"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Menu"
+            android:screenOrientation="userPortrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".testeingles.HighestScoreActivity"
+            android:label="Resultado Final" />
+        <activity
+            android:name=".testeingles.QuizActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".Respostas" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="Menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Sobre"
+            android:label="Quem Somos ?" />
+        <activity android:name=".facebook" />
+        <activity android:name=".Site" />
+        <activity android:name=".Login"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
+        <activity android:name=".Entrar"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
+        <activity android:name=".Cadastro"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            ></activity>
+    </application>
+
+</manifest>

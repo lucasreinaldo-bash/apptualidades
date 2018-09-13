@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    tools:context=".Sobre">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="291dp"
+        android:layout_height="138dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logooficial"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="361dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="355dp"
+        android:layout_height="307dp"
+        android:fontFamily="@font/roboto_thin"
+        android:textColor="@android:color/black"
+        android:gravity="bottom"
+        android:text="O APPTUALIDADES É UM APP CRIADO POR ALUNAS DO OITAVO SEMESTRE DE JORNALISMO PARA AUXILIAR VESTIBULANDOS A SE PREPARAREM DE FORMA DIVERTIDA PARA AS PROVAS DE ATUALIDADES."
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="0dp" />
+</RelativeLayout>

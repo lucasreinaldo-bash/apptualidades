@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".testeingles.QuizActivity"
+    android:background="@android:color/white">
+
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:fillViewport="false"
+            android:id="@+id/scrollView2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A vereadora do Rio de Janeiro Marielle Franco, assassinada em março deste ano, tinha projetos de lei que visavam proteger:"
+                android:textSize="20sp"
+                android:padding="4dp"
+                android:fontFamily="@font/roboto_thin"
+                android:layout_marginBottom="10dp"
+                android:id="@+id/question"
+                android:layout_weight="0.97"
+                android:textColor="#fdbc4a"
+                android:textStyle="bold" />
+        </ScrollView>
+
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="50dp"
+
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/scrollView2"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="132dp"
+        android:layout_weight="0.11"
+        android:text="0/0"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textColor="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="549dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <Button
+            android:id="@+id/choice1"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="178dp"
+            android:background="@drawable/botao_atualidades"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:text="Does"
+            android:textColor="@android:color/black"
+            android:textColorHighlight="#060505"
+            android:textColorHint="#0a0909"
+            android:textSize="10dp" />
+
+
+        <Button
+            android:id="@+id/choice2"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="163dp"
+            android:background="@drawable/botao_atualidades"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:text="Do"
+            android:textColor="#000000"
+            android:textColorHighlight="#060505"
+            android:textColorHint="#0a0909"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/choice4"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="216dp"
+            android:background="@drawable/botao_atualidades"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:text="Does"
+            android:textColor="@android:color/background_dark"
+            android:textColorHighlight="#060505"
+            android:textColorHint="#0a0909"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/choice3"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="234dp"
+            android:background="@drawable/botao_atualidades"
+            android:onClick="onClick"
+            android:padding="8dp"
+            android:text="Are"
+            android:textColor="@android:color/background_dark"
+            android:textColorHighlight="@color/background_floating_material_light"
+            android:textColorHint="#0a0909"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:id="@+id/linear_id"
+            android:layout_width="match_parent"
+            android:layout_height="143dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/choice1"
+            android:layout_marginTop="-178dp"
+            android:orientation="vertical"
+            android:padding="1dp"
+
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/resposta_text"
+                android:layout_width="352dp"
+                android:layout_height="103dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="62dp"
+                android:fontFamily="@font/carme"
+                android:padding="5dp"
+                android:paddingTop="15dp"
+                android:text="Marielle era uma defensora dos direitos humanos e seus projetos de lei visavam maior atenção do Estado sobre o assédio, cuidados com a educação, entre outros aspectos sociais."
+                android:textColor="@android:color/black"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/leiaMais"
+                android:layout_width="336dp"
+                android:layout_height="26dp"
+                android:layout_alignEnd="@+id/resposta_text"
+                android:layout_below="@+id/resposta_text"
+                android:layout_marginTop="-62dp"
+                android:gravity="end"
+
+                android:paddingRight="10dp"
+                android:text="Leia Mais!"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn_avancar"
+        android:layout_width="106dp"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/botao3"
+        android:text="PRÓXIMO"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "78402381661",
+    "firebase_url": "https://apptualidades-1d9e9.firebaseio.com",
+    "project_id": "apptualidades-1d9e9",
+    "storage_bucket": "apptualidades-1d9e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78402381661:android:864160857a32a10b",
+        "android_client_info": {
+          "package_name": "vostore.apptualidade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78402381661-9fi79gfd4nr1h1ru670co265d47jldbv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vostore.apptualidade",
+            "certificate_hash": "8e95dacf6c6fad9f88ef5f89c3d1663d0cc145b4"
+          }
+        },
+        {
+          "client_id": "78402381661-8u8dqn9iu5v8vtfgfuu0dfjh8e0hjnqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQuo_iEuRxSoDm68FfvDjM7T1r3Zr_634"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78402381661-8u8dqn9iu5v8vtfgfuu0dfjh8e0hjnqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
