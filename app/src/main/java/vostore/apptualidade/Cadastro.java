@@ -1,15 +1,14 @@
 package vostore.apptualidade;
 
+
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
-
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,12 +22,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import vostore.apptualidade.testeingles.Firebase.Usuario;
 
 public class Cadastro extends AppCompatActivity {
-
     private EditText txtNome,txtEmail,txtSenha,txtSenhaRepetida,codigo,txtsobrenome,txtuserName;
-    private TextView btnRegistrar;
     private FirebaseAuth mAuth;
+    private Button btnRegistrar;
     private FirebaseDatabase database;
-    private AlertDialog.Builder dialog;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,19 +40,13 @@ public class Cadastro extends AppCompatActivity {
         txtEmail = (EditText) findViewById(R.id.rg_email);
         txtSenha = (EditText) findViewById(R.id.rg_senha);
         txtSenhaRepetida = (EditText) findViewById(R.id.rg_contrasenha);
-        btnRegistrar =  findViewById(R.id.btnRegistrar);
-
-
-
-
-
-
+        btnRegistrar = (Button) findViewById(R.id.botaocadastrar);
 
         // Instaciando o servidor
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        // Adicionando evento ao click do botão
+
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,8 +67,8 @@ public class Cadastro extends AppCompatActivity {
                                         // Sign in success, update UI with the signed-in user's information
                                         Toast.makeText(Cadastro.this, "Registro Confirmado. Seja-bem vindo!", Toast.LENGTH_SHORT).show();
                                         Usuario usuario = new Usuario();
-                                        usuario.setEmail(email);
                                         usuario.setNome(nome);
+                                        usuario.setEmail(email);
                                         usuario.setSenha(senhausuario);
                                         usuario.setNomeCompleto(nomecompleto);
                                         FirebaseUser currentUser = mAuth.getCurrentUser();
@@ -98,8 +91,9 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
-    }
 
+
+    }
     //método para validar e-mail
     private boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
@@ -130,5 +124,4 @@ public class Cadastro extends AppCompatActivity {
 
 
     }
-
 }

@@ -47,15 +47,22 @@
             android:label="Quem Somos ?" />
         <activity android:name=".facebook" />
         <activity android:name=".Site" />
-        <activity android:name=".Login"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            />
-        <activity android:name=".Entrar"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            />
-        <activity android:name=".Cadastro"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-            ></activity>
+        <activity
+            android:name=".Login"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".Entrar"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".Cadastro"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
+        <activity
+            android:name=".menu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Inicio"
+            android:label="@string/title_activity_inicio"></activity>
     </application>
 
 </manifest>

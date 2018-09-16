@@ -1,0 +1,87 @@
+package vostore.apptualidade;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import vostore.apptualidade.testeingles.FavoritosFragment;
+import vostore.apptualidade.testeingles.SairFragment;
+import vostore.apptualidade.testeingles.SimuladoFragment;
+import vostore.apptualidade.testeingles.SobreFragment;
+
+public class Inicio extends AppCompatActivity {
+
+    BottomNavigationView mNavigation;
+    private FrameLayout mFrame;
+
+    private FavoritosFragment favoritosFragment;
+    private SimuladoFragment simuladoFragment;
+    private SobreFragment sobreFragment;
+    private SairFragment sairFragment;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_inicio);
+
+
+        simuladoFragment = new SimuladoFragment();
+        favoritosFragment = new FavoritosFragment();
+        sobreFragment = new SobreFragment();
+        sairFragment = new SairFragment();
+
+
+        mFrame = findViewById(R.id.main_frame);
+        mNavigation = findViewById(R.id.navigation);
+        mNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                Fragment selectedFragment = null;
+
+                switch (item.getItemId())
+                {
+                    case R.id.nav_simulado:
+                        mNavigation.setItemBackgroundResource(R.color.colorPrimary);
+                        setFragment(simuladoFragment);
+                        return true;
+                    case R.id.nav_favoritos:
+                        mNavigation.setItemBackgroundResource(R.color.colorAccent);
+                        setFragment(favoritosFragment);
+                        return true;
+                    case R.id.nav_sair:
+                        mNavigation.setItemBackgroundResource(R.color.colorWhiteTransparent);
+
+                        setFragment(sairFragment);
+                        return true;
+                    case R.id.nav_sobre:
+                        mNavigation.setItemBackgroundResource(R.color.black_overlay);
+                        setFragment(sobreFragment);
+                        return true;
+                }
+
+
+                return true;
+            }
+
+            private void setFragment(Fragment fragment) {
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_frame, fragment);
+                fragmentTransaction.commit();
+
+            }
+
+        });
+
+
+}}

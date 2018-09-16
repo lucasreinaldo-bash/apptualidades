@@ -147,4 +147,13 @@ Estágios de aproximadamente 50h\n
     <string name="nav_header_title"></string>
     <string name="nav_header_subtitle"></string>
     <string name="nav_header_desc">Navigation header</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_inicio">Inicio</string>
+    <string name="nav_home">Simulado</string>
+    <string name="nav_sobre">Sobre</string>
+    <string name="nav_favoritos">Favoritos</string>
+    <string name="nav_sair">Sair</string>
 </resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/barra1"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_sobre"
+        android:icon="@drawable/barra2"
+        android:title="" />
+
+    <item
+        android:id="@+id/navigation_favoritos"
+        android:icon="@drawable/barra3"
+        android:title="" />
+    <item
+        android:id="@+id/navigation_sair"
+        android:icon="@drawable/barra4"
+        android:title="" />
+
+
+</menu>
