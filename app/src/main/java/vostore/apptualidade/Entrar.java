@@ -23,7 +23,7 @@ public class Entrar extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnEntrar.setBackgroundResource(R.drawable.botaoentrar2);
+
                 Intent intent = new Intent(Entrar.this, Login.class);
                 startActivity(intent);
                 finish();

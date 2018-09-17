@@ -100,14 +100,13 @@ public class Cadastro extends AppCompatActivity {
     }
     //método para validar senha
     public boolean validarContraseña(){
-        String contraseña,contraseñaRepetida;
+        String contraseña;
         contraseña = txtSenha.getText().toString();
-        contraseñaRepetida = txtSenhaRepetida.getText().toString();
-        if(contraseña.equals(contraseñaRepetida)){
+
             if(contraseña.length()>=6 && contraseña.length()<=16){
                 return true;
             }else return false;
-        }else return false;
+
     }
     //método para validar nome
     public boolean validarNombre(String nombre){

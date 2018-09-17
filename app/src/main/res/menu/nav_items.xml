@@ -5,18 +5,14 @@
 
     <item
         android:id="@+id/nav_simulado"
-        android:icon="@drawable/barra1"
-        android:title="@string/nav_home" />
+        android:icon="@drawable/barra1" />
     <item
         android:id="@+id/nav_sobre"
-        android:icon="@drawable/barra2"
-        android:title="@string/nav_sobre" />
+        android:icon="@drawable/barra2" />
     <item
         android:id="@+id/nav_favoritos"
-        android:icon="@drawable/barra3"
-        android:title="@string/nav_favoritos" />
+        android:icon="@drawable/barra3" />
     <item
         android:id="@+id/nav_sair"
-        android:icon="@drawable/barra4"
-        android:title="@string/nav_sair" />
+        android:icon="@drawable/barra4" />
 </menu>

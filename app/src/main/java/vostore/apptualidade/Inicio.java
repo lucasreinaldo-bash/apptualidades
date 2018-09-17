@@ -51,20 +51,19 @@ public class Inicio extends AppCompatActivity {
                 switch (item.getItemId())
                 {
                     case R.id.nav_simulado:
-                        mNavigation.setItemBackgroundResource(R.color.colorPrimary);
                         setFragment(simuladoFragment);
                         return true;
                     case R.id.nav_favoritos:
-                        mNavigation.setItemBackgroundResource(R.color.colorAccent);
+
                         setFragment(favoritosFragment);
                         return true;
                     case R.id.nav_sair:
-                        mNavigation.setItemBackgroundResource(R.color.colorWhiteTransparent);
+
 
                         setFragment(sairFragment);
                         return true;
                     case R.id.nav_sobre:
-                        mNavigation.setItemBackgroundResource(R.color.black_overlay);
+
                         setFragment(sobreFragment);
                         return true;
                 }
