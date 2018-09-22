@@ -12,31 +12,32 @@
 
     <ImageView
         android:id="@+id/logologin"
-        android:layout_width="300dp"
-        android:layout_height="240dp"
-        android:layout_above="@+id/cardView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-10sp"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/logologin" />
 
 
     <Button
         android:id="@+id/botaoentrar"
         android:layout_width="253dp"
-        android:layout_height="57dp"
-        android:layout_above="@+id/btn_facebook"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="126dp"
         android:background="@drawable/botaoentrar3" />
 
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView"
         android:layout_width="283dp"
-        android:layout_height="wrap_content"
-
-        android:layout_above="@+id/botaoentrar"
+        android:layout_height="181dp"
+        android:layout_alignParentBottom="true"
+        card_view:cardCornerRadius="5sp"
+        android:elevation="10sp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_margin="10sp"
+        android:layout_marginBottom="186dp"
         card_view:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
@@ -44,42 +45,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="5sp">
+            android:paddingLeft="15sp">
 
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/rg_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="seuemail@dominio.com"
                 android:maxLength="50"
                 android:padding="10sp"
-                android:id="@+id/rg_email"
+                android:fontFamily="@font/roboto_thin"
+                android:text="apptualidades@gmail.com"
                 android:textSize="10sp"
-                app:met_baseColor="#0056d3"
+                app:met_baseColor="#323333"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
                 app:met_floatingLabelText="E-mail"
-                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_floatingLabelTextColor="#242626"
                 app:met_primaryColor="#982360"
                 card_view:met_checkCharactersCountAtBeginning="true"
                 card_view:met_iconRight="@drawable/ic_mensagem" />
 
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:layout_width="match_parent"
                 android:id="@+id/rg_senha"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Senha de Acesso"
                 android:inputType="numberPassword"
                 android:padding="10sp"
+                android:fontFamily="@font/roboto_thin"
+                android:text="212121212"
                 android:textSize="10sp"
-                app:met_baseColor="#0056d3"
+                app:met_baseColor="#242626"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
                 app:met_floatingLabelText="Senha"
-                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_floatingLabelTextColor="#242626"
                 app:met_primaryColor="#982360"
                 card_view:met_iconRight="@drawable/ic_locker" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
 
 
         </LinearLayout>
@@ -101,8 +111,8 @@
         android:layout_width="128dp"
         android:layout_height="27dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/cardView"
-        android:layout_marginBottom="72dp"
+        android:layout_alignStart="@+id/botaoentrar"
+        android:layout_marginBottom="85dp"
         android:background="@drawable/botaofacebook" />
 
 
@@ -111,25 +121,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/btnRegistrar"
             android:layout_width="wrap_content"
+            android:textColor="@android:color/darker_gray"
+            android:fontFamily="@font/roboto_thin"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="18dp"
             android:layout_toStartOf="@+id/btn_facebook"
-            android:text="Não tem uma conta ?" />
+            android:text="Não tem uma conta?" />
 
         <TextView
+            android:fontFamily="@font/roboto_thin"
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/btn_facebook"
             android:layout_alignTop="@+id/btnRegistrar"
-            android:text="Cadastre-se"
-            android:textColor="@android:color/holo_blue_light"
+            android:text=" Cadastre-se"
+            style="text-decoration:underline"
             android:textStyle="bold" />
 
     </LinearLayout>

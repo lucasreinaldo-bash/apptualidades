@@ -9,13 +9,42 @@
     android:background="@drawable/fundocadastro"
     >
 
+    <Button
+        android:id="@+id/botaocadastrar"
+        android:layout_width="286dp"
+        android:layout_height="65dp"
+
+
+        android:layout_below="@+id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-126dp"
+        android:background="@drawable/botaocadastrar3" />
+
+    <Button
+        android:id="@+id/btn_facebook"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/botaocadastrar"
+        android:layout_marginStart="67dp"
+        android:background="@drawable/botaofacebook" />
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/btn_facebook"
+        android:layout_marginEnd="67dp"
+        android:background="@drawable/botaogoogle" />
 
     <ImageView
         android:id="@+id/logocadastrar"
-        android:layout_width="203dp"
-        android:layout_height="137dp"
+        android:layout_width="264dp"
+        android:layout_height="163dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
         app:srcCompat="@drawable/logocadastrar" />
 
 
@@ -24,30 +53,36 @@
         android:layout_width="283dp"
         android:layout_height="wrap_content"
 
-        android:layout_below="@+id/logocadastrar"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        card_view:cardBackgroundColor="@android:color/white">
+        android:layout_marginBottom="126dp"
+        android:padding="15sp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="5sp">
 
-        <LinearLayout
+
+        <RelativeLayout
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="5sp">
+            android:padding="10sp">
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/rg_nome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
                 android:hint="Nome"
-
                 android:paddingLeft="10sp"
-                android:textSize="12sp"
-                app:met_baseColor="#0056d3"
+                android:text="Nathalia"
+                android:textSize="14sp"
+                app:met_baseColor="#3b3a3a"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
-                app:met_floatingLabelText="Nome"
+                app:met_floatingLabelFontFamily="@font/roboto_thin"
+                app:met_floatingLabelText="NOME"
                 app:met_floatingLabelTextColor="@android:color/darker_gray"
                 app:met_primaryColor="#982360"
                 card_view:met_iconRight="@drawable/ic_user" />
@@ -56,13 +91,17 @@
                 android:id="@+id/rg_sobrenome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/rg_nome"
+                android:fontFamily="@font/roboto_thin"
                 android:hint="Sobrenome"
                 android:padding="10sp"
-                android:textSize="12sp"
-                app:met_baseColor="#0056d3"
+                android:text="Workana"
+                android:textSize="14sp"
+                app:met_baseColor="#3b3a3a"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
-                app:met_floatingLabelText="Sobrenome"
+                app:met_floatingLabelFontFamily="@font/roboto_thin"
+                app:met_floatingLabelText="SOBRENOME"
                 app:met_floatingLabelTextColor="@android:color/darker_gray"
                 app:met_primaryColor="#982360"
                 card_view:met_iconRight="@drawable/ic_user" />
@@ -71,14 +110,18 @@
                 android:id="@+id/rg_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Seu e-mail"
+                android:layout_below="@id/rg_sobrenome"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="seuemail@email.com"
                 android:inputType="textEmailAddress"
-                android:padding="10sp"
+                android:padding="14sp"
+                android:text="apptualidades@gmail.com"
                 android:textSize="12sp"
-                app:met_baseColor="#0056d3"
+                app:met_baseColor="#3b3a3a"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
-                app:met_floatingLabelText="E-mail"
+                app:met_floatingLabelFontFamily="@font/roboto_thin"
+                app:met_floatingLabelText="E-MAIL"
                 app:met_floatingLabelTextColor="@android:color/darker_gray"
                 app:met_primaryColor="#982360"
                 card_view:met_iconRight="@drawable/ic_mensagem" />
@@ -88,65 +131,33 @@
                 android:id="@+id/rg_senha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/rg_email"
+                android:fontFamily="@font/roboto_thin"
                 android:hint="Senha de Acesso"
                 android:inputType="numberPassword"
                 android:padding="10sp"
-                android:textSize="12sp"
-                app:met_baseColor="#0056d3"
+                android:text="221295"
+                android:textSize="10sp"
+                app:met_baseColor="#3b3a3a"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
-                app:met_floatingLabelText="Senha"
+                app:met_floatingLabelFontFamily="@font/roboto_thin"
+                app:met_floatingLabelText="SENHA"
                 app:met_floatingLabelTextColor="@android:color/darker_gray"
-                app:met_primaryColor="#982360"
-                card_view:met_iconRight="@drawable/ic_locker" />
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/rg_contrasenha"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Repita a senha"
-                android:inputType="numberPassword"
-                android:padding="10sp"
-                android:textSize="12sp"
-                app:met_baseColor="#0056d3"
-                app:met_errorColor="#ddaa00"
-                app:met_floatingLabel="highlight"
-                app:met_floatingLabelText="Senha"
-                app:met_floatingLabelTextColor="@android:color/darker_gray"
-                app:met_primaryColor="#982360"
+                app:met_primaryColor="#585556"
                 card_view:met_iconRight="@drawable/ic_locker" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
 
 
     </android.support.v7.widget.CardView>
 
-    <Button
-        android:id="@+id/botaocadastrar"
-        android:layout_width="273dp"
-        android:layout_height="59dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="42dp"
-        android:background="@drawable/botaocadastrar3" />
 
-    <Button
-        android:id="@+id/btn_facebook"
-        android:layout_width="128dp"
-        android:layout_height="30dp"
-        android:layout_alignStart="@+id/botaocadastrar"
-        android:layout_below="@+id/botaocadastrar"
-        android:layout_marginTop="-42dp"
-        android:background="@drawable/botaofacebook" />
 
-    <Button
-        android:id="@+id/btn_google"
-        android:layout_width="128dp"
-        android:layout_height="27dp"
-        android:layout_alignEnd="@+id/botaocadastrar"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/botaogoogle" />
+
+
+
+
+
 </RelativeLayout>
