@@ -39,7 +39,6 @@ public class Cadastro extends AppCompatActivity {
         txtNome = (EditText) findViewById(R.id.rg_nome);
         txtEmail = (EditText) findViewById(R.id.rg_email);
         txtSenha = (EditText) findViewById(R.id.rg_senha);
-        txtSenhaRepetida = (EditText) findViewById(R.id.rg_contrasenha);
         btnRegistrar = (Button) findViewById(R.id.botaocadastrar);
 
         // Instaciando o servidor

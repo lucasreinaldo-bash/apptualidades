@@ -99,21 +99,22 @@
 
 
     <Button
-        android:id="@+id/btn_facebook"
+        android:id="@+id/btn_google"
         android:layout_width="128dp"
         android:layout_height="27dp"
         android:layout_alignEnd="@+id/cardView"
-        android:layout_alignTop="@+id/btn_google"
+        android:layout_alignTop="@+id/btn_facebook"
         android:background="@drawable/botaogoogle" />
 
     <Button
-        android:id="@+id/btn_google"
+        android:id="@+id/btn_facebook"
         android:layout_width="128dp"
         android:layout_height="27dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/botaoentrar"
         android:layout_marginBottom="85dp"
         android:background="@drawable/botaofacebook" />
+
 
 
     <LinearLayout

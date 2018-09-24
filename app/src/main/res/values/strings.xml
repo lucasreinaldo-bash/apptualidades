@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">SEDUC ALAGOINHAS</string>
+    <string name="app_name">AppTualidade</string>
+    <string name="facebook_app_id">882597665279236</string>
+    <string name="fb_login_protocol_scheme">fb882597665279236</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,132 +16,18 @@
 
     </string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_endereco">Map</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="textocadastro">Não tem conta ? Cadastre-se</string>
-    <string name="Entrar"> <u>Go</u> </string>
-    <string name="Senha"> Acess Key</string>
-    <string name="Email"> E-mail</string>
+    <string name="textocadastro">Não tem conta? Cadastre-se</string>
+    <string name="redesSociais">Redes Sociais</string>
 
-    <string name="title_activity_simulado1">Teste o seu Inglês</string>
-    <string name="quem_somos">Quem somos</string>
-    <string name="nossos_cursos">Nossos Cursos</string>
-    <string name="teste_o_seu_ingl_s">Teste o seu inglês</string>
-    <string name="localiza_o_da_escola">Localização da Escola</string>
-    <string name="ar_a_do_aluno">Aréa do Aluno</string>
-    <string name="redes_sociais">Redes Sociais</string>
+
+
     <string name="facebook">Facebook</string>
     <string name="youtube">Youtube</string>
-    <string name="sobre">Com a importância de ter fluência em inglês, novos métodos de aprendizado surgem a cada dia, mas nem todos são eficientes.É comum que as escolas de inglês ensinem por meio da tradução das palavras, fazendo com que o aluno pense em português para então traduzir para o inglês.É muito comum que algumas formas de aplicar o ensino do idioma estimulem o aluno a decorar palavras e regras, mas essas formas não são nada eficientes.\n\nNa Academia de inglês Washington o aluno não aprende a traduzir, ele aprende o inglês como sua língua nativa, dessa forma, ele pensa em inglês.\n\nA língua inglesa se tornou muito mais do que um idioma, sendo uma ferramenta de comunicação global. Para isso o aluno aprende e entende as diferenças de costumes, culturas, sotaques, entre outros.
 
-Como pensar em inglês com a Washington
-Através de um ensino comunicativo e dinâmico, a língua inglesa é transmitida de forma rápida e natural. Sem precisar quebrar a cabeça decorando palavras e frases, os alunos são envolvidos pelo idioma através de muita interação e experiências vivenciadas no dia-a-dia."
-        </string>
 
-    "Menu cursos "
-    <string name="kids">O Washington Kids é um curso feito para crianças. A segunda língua é absorvida de forma lúdica, divertida e comunicativa para que elas aprendam a falar e se expressar em diversos contextos e não apenas a repetir e memorizar palavras soltas.\n\n
 
-É um curso onde as potencialidades das crianças são desenvolvidas dentro do aprendizado da língua inglesa. Mesmo em uma idade muito jovem a Metodologia Exclusiva da Academia Washington é utilizada e as crianças terão contato intenso com idioma desde o primeiro minuto de aula, de uma maneira fácil e efetiva, ou seja, as crianças já serão introduzidas na conversação real ao invés da simples memorização de vocábulos e pequenas sentenças avulsas.</string>
-    <string name="junior"> O Washington Junior é para alunos que, mesmo no início da vida acadêmica, já têm o interesse e o potencial para irem além e desenvolverem o segundo idioma de maneira sólida e eficiente.
 
-Desenvolvido especialmente para pré-adolescentes, o curso os torna fluentes e prepara para o nível avançado na língua – Washington Prime. É trabalhada a Metodologia Exclusiva da Academia Washington, desenvolvendo os contextos que são interessantes para essa fase da vida dos alunos de ensino fundamental.</string>
-    <string name="informacoesKids">"\nDURAÇÃO\n\nCurso de 3 anos | 6 Estágios semestrais\nEstágios de aproximadamente 50h
-2 Aulas semanais de 1h
-3 Aulas por capítulo do material didático
-Dos 6 aos 8 anos – Do 2º ao 4º ano escolar\n\nMATERIAL
 
-6 Livros de 12 capítulos
-Activity book
-Áudios online na plataforma do aluno\n\n
-AVALIAÇÕES
-
-Não são aplicadas avaliações
-Prática e participação medem o progresso do aluno"</string>
-
-    <string name="informacoesJuvenil"> "\nDURAÇÃO\n\nCurso de 3 anos \n 6 Estágios semestrais\nEstágios de aproximadamente 50h\n
-2 Aulas semanais de 1h\n
-3 Aulas por capítulo do material didático\n
-Dos 6 aos 8 anos – Do 2º ao 4º ano escolar\n\nMATERIAL
-
-6 Livros de 12 capítulos
-Activity book
-Áudios online na plataforma do aluno\n\n
-AVALIAÇÕES
-
-Não são aplicadas avaliações
-Prática e participação medem o progresso do aluno" </string>
-    <string name="WhashingtonPrime">O Washington Prime é focado na conversação e capacita os alunos para serem fluentes em todas habilidades linguísticas: fala, leitura, escrita e audição. É um curso com vasto conteúdo, vocabulários e expressões. Proporciona ao aluno excelentes possibilidades de praticar o inglês através de aulas fáceis, divertidas, motivadoras e diversificadas. Alta quantidade de vocábulos e estruturas apresentadas em um curto espaço de tempo, inseridos nas lições em diversas formas e sobre diversos setores, assuntos diferentes além de conhecimentos gerais.
-
-Desenvolvido para o aprendizado diário, de forma natural e com todo apoio dos professores. Perfeito para quem pretende viajar ou utiliza o inglês no trabalho.
-
-Aulas extra curriculares/English in Action – flexibilidade para criar aulas de acordo com o interesse e necessidade do aluno ou grupo.</string>
-    <string name="informacoesAdvanced">\nDURAÇÃO\n
-\nCurso de 2 anos divididos  \n4 Estágios semestrais\n
-Estágios de aproximadamente 50h\n
-2 Aulas semanais de 1h\n
-3 ou 4 Aulas por capítulos do material didático\n
-Qualquer idade desde que o alunos tenha prévio conhecimento da língua inglesa e esteja apto para o nível
-\n\nMATERIAL\n
-
-\n 4 Livros\n
-Áudios online na plataforma do aluno\n
-\n\nAVALIAÇÕES\n
-\n
-2 Avaliações escritas\n
-1 Avaliação oral\n
-Nível de aproveitamento cumulativo com nota mínima 7\n\n
-</string>
-    <string name="advanced">
-        O Washington Advanced é para todos os alunos quem buscam desenvolver seu aprendizado e aprimorar o idioma ainda mais. É indicado para quem já domina a língua inglesa e deseja aprofundar o conhecimento em gramática, vocabulário, oratória, etc.
-
-Feito especialmente para alunos que pretendem utilizar o inglês para carreira acadêmica.
-    </string>
-    <string name="flex">
-        O Washington Flex é composto por formatos de cursos de inglês. Isso significa que os cursos são desenvolvidos de acordo com a necessidade individual do aluno ou, também é possível montar um curso Flex em grupo.
-
-Essa é a maneira que a Academia de Inglês Washington oferece para você aprender inglês independentemente da sua rotina. Aprender inglês é possível!
-
-    </string>
-    <string name="informacoesFlex">
-        \nAulas VIP – Aulas particulares com pacote de 30h é o necessário para cursar 1 (um) semestre/estágio. Esta carga horária será distribuída de acordo com a necessidade e disponibilidade do aluno, sempre com intervalos entre as aulas, para a realização de homework e dedicação individual.
-\n\nAulas VIP para viagem – Indicado para alunos que não possuem noções da língua inglesa ou para quem quer ativar vocabulário e conversação para viagem:\n
-        \n-Pacote com 30h para cursar o book I e complementação com vocabulários específicos ou pacote 10h para ativar conversação.\n
-        -Turmas fechadas para empresas\n
--Cursos preparatórios para exames – Admissão em mestrado, intercâmbios, proficiência e outros.
-        \n
-Free Conversation
-    </string>
-    <string name="informacoesEveryday">DURAÇÃO\n\n
-40h – Aproximadamente 4 meses\n
-Estágio único\n
-A partir de 12 anos – 7º ano escolar/Adultos\n\n
-MATERIAL\n
-\n
-Material Everyday Conversation – Específico para a carga horária de 40h
-\n\nAVALIAÇÕES\n\n
-
-1 Avaliação final
-Nível de aproveitamento cumulativo com nota mínima 5</string>
-    <string name="everyday">O Washington Everyday Conversation é perfeito para quem busca condições de ter uma conversa básica e introdutória no idioma inglês. É um curso rápido e eficiente, por isso, é também muito denso.
-
-Ideal para pessoas que precisam viajar ao exterior ou terão contato com estrangeiros e precisam desenvolver a língua inglesa em pouco tempo.</string>
-    <string name="informacoesJunior">\n\nDURAÇÃO\n\n
-Curso de 2 anos | 4 Estágios semestrais\n
-Estágios de aproximadamente 50h\n
-2 Aulas semanais de 1h – Junior 1 e 2\n
-2 Aulas semanais de 1h15 – Junior 3 e 4
-\n\n
- MATERIAL\n\n
-            4 Livros\n
-            Junior 1 e 2 – 2 Livros de 12 unidades\n
-            Junior 3 e 4 – 2 Livros de 12 unidades\n
-            Activity book\n
-            Áudios online na plataforma do aluno\n
-\nAVALIAÇÕES\n\n
-            3 Avaliações escritas por semestre\n
-            Nível de aproveitamento cumulativo com nota mínima 7</string>
-
-    <string name="title_activity_menu_resstrito">Menu do Aluno</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
