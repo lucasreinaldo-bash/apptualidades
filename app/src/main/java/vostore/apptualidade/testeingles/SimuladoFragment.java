@@ -1,12 +1,15 @@
 package vostore.apptualidade.testeingles;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import vostore.apptualidade.MainActivity;
 import vostore.apptualidade.R;
 
 /**
@@ -14,9 +17,15 @@ import vostore.apptualidade.R;
  */
 public class SimuladoFragment extends Fragment {
 
+    private View myFragment;
 
-    public SimuladoFragment() {
+    private Button comecar, voltar;
+
+
+    public static SimuladoFragment newInstance() {
         // Required empty public constructor
+        SimuladoFragment simuladoFragment = new SimuladoFragment();
+        return simuladoFragment;
     }
 
 
@@ -24,7 +33,30 @@ public class SimuladoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_simulado, container, false);
+
+        View rootView = inflater.inflate(R.layout.fragment_simulado,
+                container, false);
+
+        comecar = rootView.findViewById(R.id.btn_comecar);
+
+
+
+        comecar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+              updateDetail();
+
+            }
+        });
+         return rootView;
+
+
+
+    }
+    public void updateDetail() {
+        Intent intent = new Intent(getActivity(), QuizActivity.class);
+        startActivity(intent);
     }
 
 }

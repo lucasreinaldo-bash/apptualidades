@@ -48,39 +48,33 @@ public class Inicio extends AppCompatActivity {
 
                 Fragment selectedFragment = null;
 
-                switch (item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.nav_simulado:
-                        setFragment(simuladoFragment);
-                        return true;
-                    case R.id.nav_favoritos:
+                        selectedFragment = SimuladoFragment.newInstance();
+                        break;
 
-                        setFragment(favoritosFragment);
-                        return true;
-                    case R.id.nav_sair:
-
-
-                        setFragment(sairFragment);
-                        return true;
-                    case R.id.nav_sobre:
-
-                        setFragment(sobreFragment);
-                        return true;
                 }
+
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_frame, selectedFragment);
+                fragmentTransaction.commit();
 
 
                 return true;
-            }
 
-            private void setFragment(Fragment fragment) {
-
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.main_frame, fragment);
-                fragmentTransaction.commit();
 
             }
 
         });
 
+        setDefaultFragment();
 
-}}
+
+    }
+
+    private void setDefaultFragment() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.main_frame, SimuladoFragment.newInstance());
+        transaction.commit();
+    }
+}

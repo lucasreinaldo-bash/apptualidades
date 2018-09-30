@@ -9,4 +9,6 @@
     <color name="colorWhiteTransparent">#80ffffff</color>
     <color name="colorAccentTrans">#a0009688</color>
     <color name="colorBlackTrans">#a0000000</color>
+    <color name="nomeBotoes">#e74a58</color>
+    <color name="perguntas">#544e52</color>
 </resources>

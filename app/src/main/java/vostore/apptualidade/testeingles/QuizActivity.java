@@ -3,8 +3,7 @@ package vostore.apptualidade.testeingles;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +35,7 @@ public class QuizActivity extends AppCompatActivity {
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0;  // current total score
     private int mQuestionNumber = 0; // current question number
+    private int quantidade =1;
     public LinearLayout linear;
     private MediaPlayer mp1, mp2;
 
@@ -66,6 +66,9 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
+        Typeface font = Typeface.createFromAsset(this.getAssets(), "p_black.OTF");
+        mScoreView.setTypeface(font);
+
 
 
 
@@ -92,6 +95,13 @@ public class QuizActivity extends AppCompatActivity {
                 mButtonChoice4.setBackgroundResource(R.drawable.botao_atualidades);
                 updateScore(mScore);
                 updateQuestion();
+
+
+                if (quantidade < mQuestionLibrary.getLength()){
+                    quantidade++;
+                    mScoreView.setText("" + quantidade + " de 10");
+                }
+
 
 
             }
@@ -123,6 +133,10 @@ public class QuizActivity extends AppCompatActivity {
         // check if we are not outside array bounds for questions
         if (mQuestionNumber < mQuestionLibrary.getLength()) {
 
+
+
+
+
             linear.setVisibility(View.INVISIBLE);
             // set the text for new question, and new 4 alternative to answer on four buttons
             mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
@@ -145,7 +159,7 @@ public class QuizActivity extends AppCompatActivity {
 
     // show current total score for the user
     private void updateScore(int point) {
-        mScoreView.setText("" + mScore + "/ ?");// + mQuestionLibrary.getLength());
+      // + mQuestionLibrary.getLength());
     }
 
     public void onClick(View view) {
