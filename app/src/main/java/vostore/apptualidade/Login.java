@@ -83,6 +83,14 @@ public class Login extends AppCompatActivity {
 
         mCallbackManager = CallbackManager.Factory.create();
 
+        cadastre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this,Inicio.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -182,8 +190,8 @@ public class Login extends AppCompatActivity {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.getException());
-                    Toast.makeText(Login.this, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(Login.this, ""
+                            //Toast.LENGTH_SHORT).show();
 
                     updateUI();
                 }

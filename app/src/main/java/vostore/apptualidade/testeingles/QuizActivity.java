@@ -209,7 +209,7 @@ public class QuizActivity extends AppCompatActivity {
             mp1.start();
             //updateScore(mScore);
             //updateQuestion();
-            Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
 
 
 
@@ -250,7 +250,7 @@ public class QuizActivity extends AppCompatActivity {
                 answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
 
             }
-            Toast.makeText(QuizActivity.this, "Errou!", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(QuizActivity.this, "Errou!", Toast.LENGTH_SHORT).show();
 
 
 

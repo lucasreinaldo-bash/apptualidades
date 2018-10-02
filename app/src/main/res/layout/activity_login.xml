@@ -143,8 +143,9 @@
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/btn_facebook"
             android:layout_alignTop="@+id/btnRegistrar"
+            android:layout_marginLeft="5dp"
             android:fontFamily="@font/roboto_condensed_light"
-            android:text=" Cadastre-se"
+            android:text="Cadastre-se"
             android:textColor="#7c7c7a"
             android:textStyle="bold" />
 
