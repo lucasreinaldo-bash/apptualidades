@@ -49,13 +49,13 @@
 
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/rg_email"
+                android:id="@+id/emailid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
                 android:hint="seuemail@dominio.com"
                 android:maxLength="50"
                 android:padding="10sp"
-                android:fontFamily="@font/roboto_thin"
                 android:text="apptualidades@gmail.com"
                 android:textSize="10sp"
                 app:met_baseColor="#323333"
@@ -69,13 +69,13 @@
 
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/rg_senha"
+                android:id="@+id/senhaid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
                 android:hint="Senha de Acesso"
                 android:inputType="numberPassword"
                 android:padding="10sp"
-                android:fontFamily="@font/roboto_thin"
                 android:text="212121212"
                 android:textSize="10sp"
                 app:met_baseColor="#242626"
@@ -128,23 +128,24 @@
         <TextView
             android:id="@+id/btnRegistrar"
             android:layout_width="wrap_content"
-            android:textColor="@android:color/darker_gray"
-            android:fontFamily="@font/roboto_thin"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="18dp"
             android:layout_toStartOf="@+id/btn_facebook"
-            android:text="Não tem uma conta?" />
+            android:fontFamily="@font/roboto_condensed_light"
+            android:text="Não tem uma conta? "
+            android:textColor="@android:color/darker_gray" />
 
         <TextView
-            android:fontFamily="@font/roboto_thin"
             android:id="@+id/textView5"
+            style="text-decoration:underline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/btn_facebook"
             android:layout_alignTop="@+id/btnRegistrar"
+            android:fontFamily="@font/roboto_condensed_light"
             android:text=" Cadastre-se"
-            style="text-decoration:underline"
+            android:textColor="#7c7c7a"
             android:textStyle="bold" />
 
     </LinearLayout>

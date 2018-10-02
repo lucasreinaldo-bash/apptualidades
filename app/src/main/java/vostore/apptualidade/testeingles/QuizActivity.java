@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import vostore.apptualidade.Inicio;
 import vostore.apptualidade.R;
 
 import vostore.apptualidade.SplashActivity;
@@ -263,7 +264,7 @@ public class QuizActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed () {
-        Intent intent = new Intent(QuizActivity.this, SimuladoFragment.class);
+        Intent intent = new Intent(QuizActivity.this, Inicio.class);
         startActivity(intent);
         finish();
 

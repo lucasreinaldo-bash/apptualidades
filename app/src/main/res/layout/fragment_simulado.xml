@@ -28,7 +28,7 @@
             android:layout_height="62dp"
             android:layout_gravity="center"
 
-            android:background="@drawable/botaocomecar" />
+            android:background="@drawable/botaocomecarquiz" />
 
         <Button
             android:id="@+id/btn_voltar"
@@ -36,7 +36,7 @@
             android:layout_height="62dp"
             android:layout_gravity="center"
 
-            android:background="@drawable/botaovoltar" />
+            android:background="@drawable/botao" />
 
 
     </LinearLayout>
