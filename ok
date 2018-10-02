@@ -1,0 +1,35 @@
+[33mcommit 43a6fb78cb3d3176570e6d1ad8e80498b4a658f1[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Sun Sep 30 16:07:02 2018 -0300
+
+    Quiz funcionando . Falta implementar o progress bar e ajustar o layout
+
+[33mcommit cc10a629630a3bc87219ccafddd6252d26e8326d[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Mon Sep 24 18:36:59 2018 -0300
+
+    Atualização com vinculação ao Facebook. Api configurada mas ainda apresenta erro na execução
+
+[33mcommit acf148f6e4597e7993122629aa534cded150a604[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Sat Sep 22 00:28:51 2018 -0300
+
+    Modificações realizadas e erro no font do label text
+
+[33mcommit 58cf096f20531238af2ab0213db164936cacf622[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Mon Sep 17 14:53:32 2018 -0300
+
+     Modificação com protótipo entregue para a cliente
+
+[33mcommit 3c32650c2bb2fc576bf8480a439c3d7697194ee8[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Sun Sep 16 16:59:34 2018 -0300
+
+     BottonNavigation implementado + 4 fragments. Não apresenta erro nessa versão
+
+[33mcommit d9266cfa7c1a2ad924afbe9fa727755446ccee84[m
+Author: Lucas Reinaldo <lucazreinaldo@gmail.com>
+Date:   Thu Sep 13 19:14:23 2018 -0300
+
+     Vinculação do Firebase, mas apresenta erros ainda na activitity 'registro'

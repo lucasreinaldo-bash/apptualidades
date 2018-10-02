@@ -12,6 +12,9 @@
         <item>@font/chivo</item>
         <item>@font/concert_one</item>
         <item>@font/pacifico</item>
+        <item>@font/roboto_condensed_bold</item>
+        <item>@font/roboto_condensed_light</item>
+        <item>@font/roboto_condensed_regular</item>
         <item>@font/roboto_thin</item>
     </array>
 </resources>

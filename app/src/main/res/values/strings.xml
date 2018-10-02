@@ -18,11 +18,23 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="textocadastro">Não tem conta? Cadastre-se</string>
     <string name="redesSociais">Redes Sociais</string>
+    <string name="btn_leia">LEIA MAIS</string>
+    <string name="btn_questao2">QUESTÃO 2</string>
+    <string name="btn_questao3">QUESTÃO 3</string>
+    <string name="btn_questao4">QUESTÃO 4</string>
+    <string name="btn_questao5">QUESTÃO 5</string>
+    <string name="btn_questao6">QUESTÃO 6</string>
+    <string name="btn_questao7">QUESTÃO 7</string>
+    <string name="btn_questao8">QUESTÃO 8</string>
+    <string name="btn_questao9">QUESTÃO 9</string>
+    <string name="btn_questao10">QUESTÃO 10</string>
 
 
 
     <string name="facebook">Facebook</string>
     <string name="youtube">Youtube</string>
+    <string name="resposta_certa"></string>
+    <string name="descricao_1"> <b>Resposta Certa:</b> Mariele era uma mulher negra que lutava contra dasdsadas add adas ddad a asd accvcv adasdas fafadad ggadasfasd a asdasd adas gad ad vnhclucas nsunasdsa </string>
 
 
 

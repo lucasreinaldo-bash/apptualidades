@@ -3,40 +3,48 @@ package vostore.apptualidade.testeingles;
 
 import android.content.Context;
 import android.content.Intent;
+
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import vostore.apptualidade.R;
-import vostore.apptualidade.Respostas;
+
 import vostore.apptualidade.SplashActivity;
 
 
 public class QuizActivity extends AppCompatActivity {
 
-    private ImageView logo;
+
     private QuestionBank mQuestionLibrary = new QuestionBank();
     private TextView mScoreView;   // view for current total score
     private TextView mQuestionView;  //current question to answer
-    private TextView leia,resposta;
-    private Button btnAvancar;
+    private TextView resposta_certa,resposta_descricao;
+    private Button leia,btnAvancar;
+    private ImageView progressBar;
     private Button mButtonChoice1; // multiple choice 1 for mQuestionView
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
     private String mAnswer;  // correct answer for question in mQuestionView
-    private int mScore = 0;  // current total score
+
     private int mQuestionNumber = 0; // current question number
     private int quantidade =1;
-    public LinearLayout linear;
+    private int question = 2;
+    public LinearLayout linear,linear2,linear3;
     private MediaPlayer mp1, mp2;
 
     @Override
@@ -47,7 +55,9 @@ public class QuizActivity extends AppCompatActivity {
        /* android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF8F00")));
 */
-
+        progressBar = findViewById(R.id.progress);
+        linear2 = findViewById(R.id.linear_id2);
+        linear3 = findViewById(R.id.linear_id3);
         linear = findViewById(R.id.linear_id);
         mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
@@ -56,35 +66,32 @@ public class QuizActivity extends AppCompatActivity {
         btnAvancar = findViewById(R.id.btn_avancar);
         mButtonChoice3 = findViewById(R.id.choice3);
         mButtonChoice4 = findViewById(R.id.choice4);
-        leia = findViewById(R.id.leiaMais);
-        resposta = findViewById(R.id.resposta_text);
+        leia = findViewById(R.id.btn_leia);
+        resposta_descricao = findViewById(R.id.descricao_resposta);
+
+
 
         mp1 = MediaPlayer.create(QuizActivity.this, R.raw.correct);
         mp2 = MediaPlayer.create(QuizActivity.this, R.raw.wrong);
 
-        resposta.setText("");
-
-
-
-        Typeface font = Typeface.createFromAsset(this.getAssets(), "p_black.OTF");
-        mScoreView.setTypeface(font);
-
-
-
-
         updateQuestion();
-        // show current total score for the user
-        updateScore(mScore);
+
+
+
+
+
+
+
 
         leia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(QuizActivity.this, Respostas.class);
-                startActivity(intent);
-                finish();
             }
         });
+
+
+
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,7 +100,14 @@ public class QuizActivity extends AppCompatActivity {
                 mButtonChoice2.setBackgroundResource(R.drawable.botao_atualidades);
                 mButtonChoice3.setBackgroundResource(R.drawable.botao_atualidades);
                 mButtonChoice4.setBackgroundResource(R.drawable.botao_atualidades);
-                updateScore(mScore);
+
+                mButtonChoice1.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.nomeBotoes));
+                mButtonChoice2.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.nomeBotoes));
+                mButtonChoice3.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.nomeBotoes));
+                mButtonChoice4.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.nomeBotoes));
+
+
+
                 updateQuestion();
 
 
@@ -107,25 +121,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-        resposta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (mQuestionNumber) {
-                    case 1:
 
-
-                        break;
-                    case 2:
-                                               break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                }
-            }
-        });
 
     }
 
@@ -133,7 +129,21 @@ public class QuizActivity extends AppCompatActivity {
         // check if we are not outside array bounds for questions
         if (mQuestionNumber < mQuestionLibrary.getLength()) {
 
+            switch (mQuestionNumber){
+                case 1:
+                    Drawable drawable= getResources().getDrawable(R.drawable.progress2);
+                    progressBar.setImageDrawable(drawable);
+                    break;
+                case 2:
+                    Drawable drawable1= getResources().getDrawable(R.drawable.progress3);
+                    progressBar.setImageDrawable(drawable1);
 
+            }
+
+
+
+
+            btnAvancar.setText("QUESTÃO "+ question);
 
 
 
@@ -148,23 +158,18 @@ public class QuizActivity extends AppCompatActivity {
 
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
+            question++;
         } else {
-            Toast.makeText(QuizActivity.this, "Venha ser o nosso aluno ! Você terá acesso a novas questões diárias e ainda terá 'recompensas'", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
-            intent.putExtra("score", mScore); // pass the current score to the second screen
-            startActivity(intent);
-            finish();
+           // Toast.makeText(QuizActivity.this, "Venha ser o nosso aluno ! Você terá acesso a novas questões diárias e ainda terá 'recompensas'", Toast.LENGTH_LONG).show();
+
+
         }
     }
 
     // show current total score for the user
-    private void updateScore(int point) {
-      // + mQuestionLibrary.getLength());
-    }
-
-    public void onClick(View view) {
+        public void onClick(View view) {
         //all logic for all answers buttons in one method
-        int k = 1;
+
         Button answer = (Button) view;
 
         // if the answer is correct, increase the score
@@ -187,15 +192,18 @@ public class QuizActivity extends AppCompatActivity {
         if (answer.getText() == mAnswer)
         {
 
-            mScore = mScore + 1;
+
             answer.setBackgroundResource(R.drawable.botao_quiz);
+            answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+
 
             linear.setVisibility(View.VISIBLE);
-            resposta.setText("Marielle era uma defensora dos\n" +
+
+           /* resposta_descricao.setText("Marielle era uma defensora dos\n" +
                     "direitos humanos e seus projetos de lei visavam maior\n" +
                     "atenção do Estado sobre o assédio, cuidados com a\n" +
                     "educação, entre outros aspectos sociais.");
-
+*/
             //Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
             mp1.start();
             //updateScore(mScore);
@@ -207,28 +215,47 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             mp2.start();
             linear.setVisibility(View.VISIBLE);
-            resposta.setText("Marielle era uma defensora dos\n" +
-                    "direitos humanos e seus projetos de lei visavam maior\n" +
-                    "atenção do Estado sobre o assédio, cuidados com a\n" +
-                    "educação, entre outros aspectos sociais.");
 
-            if (alternativa1 == mAnswer)
+
+
+
+            if (alternativa1 == mAnswer) {
+
+                answer.setBackgroundResource(R.drawable.botao_quiz2);
+                answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
                 mButtonChoice1.setBackgroundResource(R.drawable.botao_quiz);
-            else if (alternativa2 == mAnswer)
-                mButtonChoice2.setBackgroundResource(R.drawable.botao_quiz);
-            else if (alternativa3 == mAnswer)
-                mButtonChoice3.setBackgroundResource(R.drawable.botao_quiz);
-            else if ( alternativa4 == mAnswer)
-                mButtonChoice4.setBackgroundResource(R.drawable.botao_quiz);
-            answer.setBackgroundResource(R.drawable.botao_quiz2);
+                mButtonChoice1.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
 
+            }
+            else if (alternativa2 == mAnswer) {
+                mButtonChoice2.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorWhite));
+                mButtonChoice2.setBackgroundResource(R.drawable.botao_quiz);
+                answer.setBackgroundResource(R.drawable.botao_quiz2);
+                answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+
+            }
+            else if (alternativa3 == mAnswer) {
+                mButtonChoice3.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorWhite));
+                mButtonChoice3.setBackgroundResource(R.drawable.botao_quiz);
+                answer.setBackgroundResource(R.drawable.botao_quiz2);
+                answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+
+
+            }
+            else if ( alternativa4 == mAnswer) {
+                mButtonChoice4.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+                mButtonChoice4.setBackgroundResource(R.drawable.botao_quiz);
+                answer.setBackgroundResource(R.drawable.botao_quiz2);
+                answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+
+            }
             Toast.makeText(QuizActivity.this, "Errou!", Toast.LENGTH_SHORT).show();
 
 
 
             // show current total score for the user
             vibrar();
-            updateScore(mScore);
+
             mp2.start();
             // once user answer the question, we move on to the next one, if any
             //updateQuestion();
@@ -236,7 +263,7 @@ public class QuizActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed () {
-        Intent intent = new Intent(QuizActivity.this, SplashActivity.class);
+        Intent intent = new Intent(QuizActivity.this, SimuladoFragment.class);
         startActivity(intent);
         finish();
 
