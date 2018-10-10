@@ -24,7 +24,7 @@
         <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
-
+    <style name="TemaDesign" parent="android:Theme.Material" />
     <style name="BotonColores" parent="Theme.AppCompat.Light">
         <item name="colorControlHighlight">#46eae1e2</item>
         <item name="colorButtonNormal">#18145e</item>

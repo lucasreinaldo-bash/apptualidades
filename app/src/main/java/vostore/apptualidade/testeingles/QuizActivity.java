@@ -132,13 +132,45 @@ public class QuizActivity extends AppCompatActivity {
 
             switch (mQuestionNumber){
                 case 1:
-                    Drawable drawable= getResources().getDrawable(R.drawable.progress2);
-                    progressBar.setImageDrawable(drawable);
+                    Drawable drawable1= getResources().getDrawable(R.drawable.progress2);
+                    progressBar.setImageDrawable(drawable1);
                     break;
                 case 2:
-                    Drawable drawable1= getResources().getDrawable(R.drawable.progress3);
-                    progressBar.setImageDrawable(drawable1);
-
+                    Drawable drawable2= getResources().getDrawable(R.drawable.progress2);
+                    progressBar.setImageDrawable(drawable2);
+                    break;
+                case 3:
+                    Drawable drawable3= getResources().getDrawable(R.drawable.progress3);
+                    progressBar.setImageDrawable(drawable3);
+                    break;
+                case 4:
+                    Drawable drawable4= getResources().getDrawable(R.drawable.progress4);
+                    progressBar.setImageDrawable(drawable4);
+                    break;
+                case 5:
+                    Drawable drawable5= getResources().getDrawable(R.drawable.progress5);
+                    progressBar.setImageDrawable(drawable5);
+                    break;
+                case 6:
+                    Drawable drawable6= getResources().getDrawable(R.drawable.progress6);
+                    progressBar.setImageDrawable(drawable6);
+                    break;
+                case 7:
+                    Drawable drawable7= getResources().getDrawable(R.drawable.progress7);
+                    progressBar.setImageDrawable(drawable7);
+                    break;
+                case 8:
+                    Drawable drawable8= getResources().getDrawable(R.drawable.progress8);
+                    progressBar.setImageDrawable(drawable8);
+                    break;
+                case 9:
+                    Drawable drawable9= getResources().getDrawable(R.drawable.progress9);
+                    progressBar.setImageDrawable(drawable9);
+                    break;
+                case 10:
+                    Drawable drawable10= getResources().getDrawable(R.drawable.progress10);
+                    progressBar.setImageDrawable(drawable10);
+                    break;
             }
 
 
