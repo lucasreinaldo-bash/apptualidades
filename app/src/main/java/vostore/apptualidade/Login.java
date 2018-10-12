@@ -24,6 +24,8 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -31,24 +33,32 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mukeshsolanki.sociallogin.facebook.FacebookHelper;
+import com.mukeshsolanki.sociallogin.facebook.FacebookListener;
+import com.mukeshsolanki.sociallogin.google.GoogleHelper;
+import com.mukeshsolanki.sociallogin.google.GoogleListener;
 
 import java.util.Arrays;
 
 import vostore.apptualidade.testeingles.SimuladoFragment;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements FacebookListener, GoogleListener{
 
     ImageView top;
     Animation fromlogo;
-    Button btnLogin, btnFacebook;
+    Button btnLogin,btnGoogle, btnFacebook;
     private CallbackManager mCallbackManager;
     private static final String TAG = "FACELOG";
     private FirebaseAuth mAuth;
     private DatabaseReference databaseReference;
     private EditText senhausuario,emailusuario;
     private TextView cadastre;
+    HelperFacebook mFacebook;
+    GoogleHelper mGoogle;
+
 
 
     @Override
@@ -58,7 +68,13 @@ public class Login extends AppCompatActivity {
         //verificarUsuarioLogado();
 
 
+        // Iniciando com o Facebook
+        FacebookSdk.setApplicationId(getResources().getString(R.string.facebook_application_id));
+        FacebookSdk.sdkInitialize(this);
+        mFacebook = new HelperFacebook(this);
 
+        //Iniciando com o Google
+        mGoogle = new GoogleHelper(this,this,null);
         mAuth = FirebaseAuth.getInstance();
 
         cadastre = findViewById(R.id.textView5);
@@ -67,6 +83,7 @@ public class Login extends AppCompatActivity {
         top = findViewById(R.id.logologin);
         fromlogo = AnimationUtils.loadAnimation(this, R.anim.fromlogo);
         btnFacebook = findViewById(R.id.btn_facebook);
+        btnGoogle = findViewById(R.id.btn_google);
         top.setAnimation(fromlogo);
 
         senhausuario = findViewById(R.id.senhaid);
@@ -80,9 +97,14 @@ public class Login extends AppCompatActivity {
 
 
 
-
         mCallbackManager = CallbackManager.Factory.create();
 
+        btnGoogle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mGoogle.performSignIn(Login.this);
+            }
+        });
         cadastre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,26 +116,7 @@ public class Login extends AppCompatActivity {
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LoginManager.getInstance().logInWithReadPermissions(Login.this, Arrays.asList("email","public_profile"));
-                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                        handleFacebookAccessToken(loginResult.getAccessToken());
-                    }
-
-                    @Override
-                    public void onCancel() {
-                        Log.d(TAG, "facebook:onCancel");
-                        // ...
-                    }
-
-                    @Override
-                    public void onError(FacebookException error) {
-                        Log.d(TAG, "facebook:onError", error);
-                        // ...
-                    }
-                });
+             mFacebook.performSignIn(Login.this);
 
             }
         });
@@ -150,59 +153,23 @@ public class Login extends AppCompatActivity {
 
 
 
+            //Métodos
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Pass the activity result back to the Facebook SDK
-        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+        mFacebook.onActivityResult(requestCode, resultCode, data);
+        mGoogle.onActivityResult(requestCode,resultCode, data);
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        if (currentUser != null){
-            updateUI();
-        }
-    }
     private  void updateUI(){
         Toast.makeText(this, "Login Realizado", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
 
     }
-    private void handleFacebookAccessToken(AccessToken token){
-        Log.d(TAG,"handleFacebookAccessToken:"+token);
 
-        AuthCredential credential=FacebookAuthProvider.getCredential(token.getToken());
-        mAuth.signInWithCredential(credential)
-        .addOnCompleteListener(this,new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithCredential:success");
-                    FirebaseUser user = mAuth.getCurrentUser();
-                    updateUI();
-
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithCredential:failure", task.getException());
-                  //  Toast.makeText(Login.this, ""
-                            //Toast.LENGTH_SHORT).show();
-
-                    updateUI();
-                }
-
-                // ...
-
-            }
-
-
-        });
-    }
     //Funçoes criadas
     private boolean validaremail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
@@ -241,4 +208,40 @@ public class Login extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onFbSignInFail(String errorMessage) {
+        Toast.makeText(this, ""+errorMessage, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onFbSignInSuccess(String authToken, String userId) {
+        Toast.makeText(this, ""+userId, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onFBSignOut() {
+        Toast.makeText(this, "Signout !!!", Toast.LENGTH_SHORT).show();
+
+    }
+
+
+    //Métodos do Google
+    @Override
+    public void onGoogleAuthSignIn(String authToken, String userId) {
+        Toast.makeText(this, ""+userId, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onGoogleAuthSignInFailed(String errorMessage) {
+        Toast.makeText(this, ""+errorMessage, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onGoogleAuthSignOut() {
+        Toast.makeText(this, "Desconectado", Toast.LENGTH_SHORT).show();
+
+    }
 }

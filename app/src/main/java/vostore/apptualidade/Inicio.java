@@ -118,4 +118,14 @@ public class Inicio extends AppCompatActivity {
         transaction.replace(R.id.main_frame, SimuladoFragment.newInstance());
         transaction.commit();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(Inicio.this, Login.class);
+        startActivity(intent);
+        finish();
+
+
+    }
 }
