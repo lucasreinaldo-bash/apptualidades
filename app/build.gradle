@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:3.3.1'
     //Biblioteca do Facebook
     implementation 'com.facebook.android:facebook-android-sdk:4.35.0'
+    implementation 'com.facebook.android:facebook-login:4.35.0'
     //Biblioteca do Social Login
     implementation 'com.github.mukeshsolanki:social-login-helper:1.0.2'
 

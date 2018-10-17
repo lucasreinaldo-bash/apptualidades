@@ -232,11 +232,29 @@ public class QuizActivity extends AppCompatActivity {
 
             linear.setVisibility(View.VISIBLE);
 
-           /* resposta_descricao.setText("Marielle era uma defensora dos\n" +
-                    "direitos humanos e seus projetos de lei visavam maior\n" +
-                    "atenção do Estado sobre o assédio, cuidados com a\n" +
-                    "educação, entre outros aspectos sociais.");
-*/
+
+            if (mQuestionNumber < mQuestionLibrary.getLength()){
+                switch (mQuestionNumber){
+
+                    case 1:
+                        resposta_descricao.setText(R.string.descricao_1);
+                        break;
+                    case 2:
+                        resposta_descricao.setText(R.string.descricao_2);
+                        break;
+                    case 3:
+                        resposta_descricao.setText(R.string.descricao_3);
+                        break;
+
+
+
+                }
+            }
+
+
+
+
+
             //Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
             mp1.start();
             //updateScore(mScore);

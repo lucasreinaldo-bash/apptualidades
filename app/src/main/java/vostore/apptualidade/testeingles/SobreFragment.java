@@ -15,8 +15,11 @@ import vostore.apptualidade.R;
 public class SobreFragment extends Fragment {
 
 
-    public SobreFragment() {
+
+    public static SobreFragment newInstance() {
         // Required empty public constructor
+        SobreFragment sobreFragment = new SobreFragment();
+        return sobreFragment;
     }
 
 

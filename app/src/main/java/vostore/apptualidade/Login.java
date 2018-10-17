@@ -45,7 +45,7 @@ import java.util.Arrays;
 
 import vostore.apptualidade.testeingles.SimuladoFragment;
 
-public class Login extends AppCompatActivity implements FacebookListener, GoogleListener{
+public class Login extends AppCompatActivity {
 
     ImageView top;
     Animation fromlogo;
@@ -58,8 +58,7 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
     private TextView cadastre;
     HelperFacebook mFacebook;
     GoogleHelper mGoogle;
-
-
+    private CallbackManager mCallBackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,13 +67,7 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
         //verificarUsuarioLogado();
 
 
-        // Iniciando com o Facebook
-        FacebookSdk.setApplicationId(getResources().getString(R.string.facebook_application_id));
-        FacebookSdk.sdkInitialize(this);
-        mFacebook = new HelperFacebook(this);
 
-        //Iniciando com o Google
-        mGoogle = new GoogleHelper(this,this,null);
         mAuth = FirebaseAuth.getInstance();
 
         cadastre = findViewById(R.id.textView5);
@@ -86,6 +79,8 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
         btnGoogle = findViewById(R.id.btn_google);
         top.setAnimation(fromlogo);
 
+
+
         senhausuario = findViewById(R.id.senhaid);
         emailusuario = findViewById(R.id.emailid);
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -95,16 +90,39 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
 
         //Instanciando o servidor de dados
 
+// Initialize Facebook Login button
 
-
-        mCallbackManager = CallbackManager.Factory.create();
-
-        btnGoogle.setOnClickListener(new View.OnClickListener() {
+        //
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mGoogle.performSignIn(Login.this);
+                LoginManager.getInstance().logInWithPublishPermissions(Login.this, Arrays.asList("email","public_profile"));
+                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(LoginResult loginResult) {
+                        Log.d(TAG, "facebook:onSuccess:" + loginResult);
+                        handleFacebookAccessToken(loginResult.getAccessToken());
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        Log.d(TAG, "facebook:onCancel");
+                        // ...
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+                        Log.d(TAG, "facebook:onError", error);
+                        // ...
+                    }
+                });
+
             }
         });
+
+
+
+
         cadastre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,13 +131,7 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
                 finish();
             }
         });
-        btnFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-             mFacebook.performSignIn(Login.this);
 
-            }
-        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,19 +166,29 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
 
 
             //Métodos
+            @Override
+            public void onStart() {
+                super.onStart();
+                // Check if user is signed in (non-null) and update UI accordingly.
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+               if (currentUser != null){
+                   updateUI();
+               }
+            }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        mFacebook.onActivityResult(requestCode, resultCode, data);
-        mGoogle.onActivityResult(requestCode,resultCode, data);
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+
     }
 
     private  void updateUI(){
-        Toast.makeText(this, "Login Realizado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Login.this, "Login Realizado", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
+        finish();
 
     }
 
@@ -207,41 +229,31 @@ public class Login extends AppCompatActivity implements FacebookListener, Google
 
 
     }
+    private void handleFacebookAccessToken(AccessToken token) {
+        Log.d(TAG, "handleFacebookAccessToken:" + token);
 
-    @Override
-    public void onFbSignInFail(String errorMessage) {
-        Toast.makeText(this, ""+errorMessage, Toast.LENGTH_SHORT).show();
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithCredential:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            Toast.makeText(Login.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI();
+                        }
 
+                        // ...
+                    }
+                });
     }
 
-    @Override
-    public void onFbSignInSuccess(String authToken, String userId) {
-        Toast.makeText(this, ""+userId, Toast.LENGTH_SHORT).show();
-    }
 
-    @Override
-    public void onFBSignOut() {
-        Toast.makeText(this, "Signout !!!", Toast.LENGTH_SHORT).show();
-
-    }
-
-
-    //Métodos do Google
-    @Override
-    public void onGoogleAuthSignIn(String authToken, String userId) {
-        Toast.makeText(this, ""+userId, Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onGoogleAuthSignInFailed(String errorMessage) {
-        Toast.makeText(this, ""+errorMessage, Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onGoogleAuthSignOut() {
-        Toast.makeText(this, "Desconectado", Toast.LENGTH_SHORT).show();
-
-    }
 }

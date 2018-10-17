@@ -3,12 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sobre_logo"
     tools:context=".testeingles.SobreFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="374dp"
+        android:layout_gravity="bottom"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/roboto_condensed_light"
+            android:paddingBottom="120dp"
+            android:text="O APPTUALIDADES É UM APP CRIADO POR ALUNAS DO OITAVO SEMESTRE DE JORNALISMO PARA AUXILIAR VESTIBULANDOS A SE PREPARAREM DE FORMA DIVERTIDA PARA AS PROVAS DE ATUALIDADES."
+            android:textAllCaps="true"
+            android:textColor="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="298dp"
+            android:layout_height="74dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btnsaiba"
+            android:gravity="bottom|end" />
+    </LinearLayout>
+
 
 </FrameLayout>

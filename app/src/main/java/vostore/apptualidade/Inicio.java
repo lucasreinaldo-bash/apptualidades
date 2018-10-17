@@ -86,7 +86,7 @@ public class Inicio extends AppCompatActivity {
                         break;
 
                     case R.id.nav_sobre:
-                        selectedFragment = simuladoFragment.newInstance();
+                        selectedFragment = sobreFragment.newInstance();
                         break;
 
                     case R.id.nav_sair:
