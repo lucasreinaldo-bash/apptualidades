@@ -50,10 +50,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".testeingles.HighestScoreActivity"
-            android:label="Resultado Final" />
+            android:name=".Simulado.HighestScoreActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            />
         <activity
-            android:name=".testeingles.QuizActivity"
+            android:name=".Simulado.QuizActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".Respostas" />
 
@@ -62,16 +63,13 @@
             android:resource="@array/preloaded_fonts" />
 
 
-
-        <activity
-            android:name=".MainActivity"
-            android:label="Menu"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Sobre"
             android:label="Quem Somos ?" />
         <activity android:name=".facebook" />
-        <activity android:name=".Site" />
+        <activity android:name=".Site"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+                        />
         <activity
             android:name=".Login"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

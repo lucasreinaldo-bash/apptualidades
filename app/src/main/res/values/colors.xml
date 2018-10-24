@@ -11,4 +11,6 @@
     <color name="colorBlackTrans">#a0000000</color>
     <color name="nomeBotoes">#e74a58</color>
     <color name="perguntas">#787879</color>
+    <color name="rosa">#e74a58</color>
+    <color name="cinza">#5f5a5c</color>
 </resources>

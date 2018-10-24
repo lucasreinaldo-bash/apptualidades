@@ -20,12 +20,8 @@ import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -33,17 +29,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.mukeshsolanki.sociallogin.facebook.FacebookHelper;
-import com.mukeshsolanki.sociallogin.facebook.FacebookListener;
 import com.mukeshsolanki.sociallogin.google.GoogleHelper;
-import com.mukeshsolanki.sociallogin.google.GoogleListener;
 
 import java.util.Arrays;
-
-import vostore.apptualidade.testeingles.SimuladoFragment;
 
 public class Login extends AppCompatActivity {
 
@@ -67,11 +57,9 @@ public class Login extends AppCompatActivity {
         //verificarUsuarioLogado();
 
 
-
+        //Fazendo Cast
         mAuth = FirebaseAuth.getInstance();
-
         cadastre = findViewById(R.id.textView5);
-
         btnLogin = findViewById(R.id.botaoentrar);
         top = findViewById(R.id.logologin);
         fromlogo = AnimationUtils.loadAnimation(this, R.anim.fromlogo);
@@ -90,9 +78,9 @@ public class Login extends AppCompatActivity {
 
         //Instanciando o servidor de dados
 
-// Initialize Facebook Login button
+        // Initialize Facebook Login button
 
-        //
+        // Utilizando o OnClick
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -119,10 +107,6 @@ public class Login extends AppCompatActivity {
 
             }
         });
-
-
-
-
         cadastre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +115,6 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -143,9 +126,7 @@ public class Login extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()){
-
-
-                                        Toast.makeText(Login.this,"Login bem sucedido",Toast.LENGTH_SHORT).show();
+                                       // Toast.makeText(Login.this,"Login bem sucedido",Toast.LENGTH_SHORT).show();
                                         Intent intent = new Intent(Login.this,Inicio.class);
                                         startActivity(intent);
                                         finish();
@@ -164,17 +145,16 @@ public class Login extends AppCompatActivity {
             }
 
 
-
             //Métodos
-            @Override
-            public void onStart() {
+
+    public void onStart() {
                 super.onStart();
                 // Check if user is signed in (non-null) and update UI accordingly.
-                FirebaseUser currentUser = mAuth.getCurrentUser();
-               if (currentUser != null){
-                   updateUI();
+               // FirebaseUser currentUser = mAuth.getCurrentUser();
+               //if (currentUser != null){
+                 //  updateUI();
                }
-            }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -185,7 +165,7 @@ public class Login extends AppCompatActivity {
     }
 
     private  void updateUI(){
-        Toast.makeText(Login.this, "Login Realizado", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(Login.this, "Login Realizado", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
         finish();
@@ -205,6 +185,8 @@ public class Login extends AppCompatActivity {
     }
 
 
+
+    //Utilizando Intent para estabelecer um ação no clique do botão "voltar", nativo dos dispositivos android
     @Override
     public void onBackPressed() {
 

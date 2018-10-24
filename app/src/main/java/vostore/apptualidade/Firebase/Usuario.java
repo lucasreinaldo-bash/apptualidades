@@ -1,4 +1,4 @@
-package vostore.apptualidade.testeingles.Firebase;
+package vostore.apptualidade.Firebase;
 
 public class Usuario {
 

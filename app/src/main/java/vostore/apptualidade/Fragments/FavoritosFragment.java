@@ -1,4 +1,4 @@
-package vostore.apptualidade.testeingles;
+package vostore.apptualidade.Fragments;
 
 
 import android.os.Bundle;
@@ -12,14 +12,11 @@ import vostore.apptualidade.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SobreFragment extends Fragment {
+public class FavoritosFragment extends Fragment {
 
 
-
-    public static SobreFragment newInstance() {
+    public FavoritosFragment() {
         // Required empty public constructor
-        SobreFragment sobreFragment = new SobreFragment();
-        return sobreFragment;
     }
 
 
@@ -27,7 +24,7 @@ public class SobreFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sobre, container, false);
+        return inflater.inflate(R.layout.fragment_favoritos, container, false);
     }
 
 }

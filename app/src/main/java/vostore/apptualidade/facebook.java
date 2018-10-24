@@ -32,7 +32,7 @@ public class facebook extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        Intent intent = new Intent(facebook.this, MainActivity.class);
+        Intent intent = new Intent(facebook.this, Inicio.class);
         startActivity(intent);
         finish();
 

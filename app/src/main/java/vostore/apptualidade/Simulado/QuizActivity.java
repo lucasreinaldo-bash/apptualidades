@@ -1,10 +1,8 @@
-package vostore.apptualidade.testeingles;
+package vostore.apptualidade.Simulado;
 
 
 import android.content.Context;
 import android.content.Intent;
-
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
@@ -13,18 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
-
 import vostore.apptualidade.Inicio;
 import vostore.apptualidade.R;
-
-import vostore.apptualidade.SplashActivity;
+import vostore.apptualidade.Site;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -41,10 +33,11 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
     private String mAnswer;  // correct answer for question in mQuestionView
-
+    private int mScore = 0; 
     private int mQuestionNumber = 0; // current question number
     private int quantidade =1;
     private int question = 2;
+    private int cod = 0;
     public LinearLayout linear,linear2,linear3;
     private MediaPlayer mp1, mp2;
 
@@ -56,37 +49,115 @@ public class QuizActivity extends AppCompatActivity {
        /* android.support.v7.app.ActionBar bar = getSupportActionBar();
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF8F00")));
 */
+     //Fazendo Cast
         progressBar = findViewById(R.id.progress);
         linear2 = findViewById(R.id.linear_id2);
         linear3 = findViewById(R.id.linear_id3);
         linear = findViewById(R.id.linear_id);
         mScoreView = findViewById(R.id.score);
         mQuestionView = findViewById(R.id.question);
+
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
-        btnAvancar = findViewById(R.id.btn_avancar);
         mButtonChoice3 = findViewById(R.id.choice3);
         mButtonChoice4 = findViewById(R.id.choice4);
+
+        btnAvancar = findViewById(R.id.btn_avancar);
         leia = findViewById(R.id.btn_leia);
         resposta_descricao = findViewById(R.id.descricao_resposta);
 
 
-
+        //Instanciando sons para serem reproduzidos de acordo com resposta do usuário
         mp1 = MediaPlayer.create(QuizActivity.this, R.raw.correct);
         mp2 = MediaPlayer.create(QuizActivity.this, R.raw.wrong);
 
+        //Método que carrega as primeiras questões do Simulado
         updateQuestion();
-
-
-
-
-
-
+        //Salvar pontuação do usuário
+        updateScore(mScore);
 
 
         leia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mScore = mScore + 5;
+
+                switch (mQuestionNumber) {
+                    case 1:
+
+                        cod = cod + 10;
+                        Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
+                        intent.putExtra("codigo",cod);
+                        startActivity(intent);
+                        finish();
+                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+                        break;
+
+                    case 2:
+                        cod = cod + 2;
+                        Intent intent2 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent2);
+                        overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+
+                        break;
+                    case 3:
+                        Intent intent3 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent3);
+                        finish();
+
+                        break;
+
+                    case 4:
+                        Intent intent4 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent4);
+                        finish();
+
+                        break;
+                    case 5:
+                        Intent intent5 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent5);
+                        finish();
+
+                        break;
+
+                    case 6:
+                        Intent intent6 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent6);
+                        finish();
+
+                        break;
+                    case 7:
+                        Intent intent7= new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent7);
+                        finish();
+
+                        break;
+
+                    case 8:
+                        Intent intent8 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent8);
+                        finish();
+
+                        break;
+                    case 9:
+                        Intent intent9= new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent9);
+                        finish();
+
+                        break;
+
+                    case 10:
+                        Intent intent10 = new Intent(QuizActivity.this, Site.class);
+                        startActivity(intent10);
+                        finish();
+
+                        break;
+                }
+
+                Intent intent = new Intent(QuizActivity.this, Site.class);
+                startActivity(intent);
+                finish();
 
             }
         });
@@ -124,6 +195,9 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void updateScore(int mScore) {
     }
 
     private void updateQuestion() {
@@ -194,7 +268,10 @@ public class QuizActivity extends AppCompatActivity {
             question++;
         } else {
            // Toast.makeText(QuizActivity.this, "Venha ser o nosso aluno ! Você terá acesso a novas questões diárias e ainda terá 'recompensas'", Toast.LENGTH_LONG).show();
-
+            Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
+            intent.putExtra("score",mScore);
+            startActivity(intent);
+            finish();
 
         }
     }
@@ -224,7 +301,7 @@ public class QuizActivity extends AppCompatActivity {
 
         if (answer.getText() == mAnswer)
         {
-
+            mScore = mScore + 5;
 
             answer.setBackgroundResource(R.drawable.botao_quiz);
             answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
@@ -328,4 +405,15 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-  }
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+}

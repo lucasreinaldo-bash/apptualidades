@@ -16,8 +16,12 @@ public class Entrar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrar);
 
+        //Fazendo Cast
         btnEntrar = findViewById(R.id.btn_entrar);
         btnCadastrar = findViewById(R.id.btn_cadastrar);
+
+
+        //Utilizando um método OnClick para "escutar" a interação do usuário e leva-lo para a tela correspondente
 
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +31,7 @@ public class Entrar extends AppCompatActivity {
                 Intent intent = new Intent(Entrar.this, Login.class);
                 startActivity(intent);
                 finish();
+                overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
 
 
             }

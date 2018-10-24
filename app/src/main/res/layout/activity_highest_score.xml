@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
-    tools:context=".testeingles.HighestScoreActivity"
+    tools:context=".Simulado.HighestScoreActivity"
     android:background="@android:color/holo_orange_light">
 
 

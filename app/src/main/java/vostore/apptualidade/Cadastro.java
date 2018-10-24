@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import vostore.apptualidade.testeingles.Firebase.Usuario;
+import vostore.apptualidade.Firebase.Usuario;
 
 public class Cadastro extends AppCompatActivity {
     private EditText txtNome,txtEmail,txtSenha,txtSenhaRepetida,codigo,txtsobrenome,txtuserName;
@@ -73,7 +73,7 @@ public class Cadastro extends AppCompatActivity {
                                         FirebaseUser currentUser = mAuth.getCurrentUser();
                                         DatabaseReference reference = database.getReference("Usuario/"+currentUser.getUid());
                                         reference.setValue(usuario);
-                                        Intent intent = new Intent(Cadastro.this, MainActivity.class);
+                                        Intent intent = new Intent(Cadastro.this, Inicio.class);
                                         startActivity(intent);
                                         finish();
 

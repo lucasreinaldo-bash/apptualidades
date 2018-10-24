@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:customfontdemo="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@drawable/fundoquiz"
     android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".testeingles.QuizActivity"
-    android:background="@drawable/fundoquiz">
+    tools:context=".Simulado.QuizActivity">
+
 
 
     <TextView
@@ -41,19 +42,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
-        <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:fillViewport="false">
-
-            <LinearLayout
+                  <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:orientation="vertical"
-                >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/question"
@@ -68,17 +60,15 @@
                     android:textAlignment="center"
                     android:textColor="@color/perguntas"
                     android:textSize="20sp" />
-
-                <TextView
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_condensed_light"
-                    android:text="Uma série de fatores culminou na crise humanitária da Venezuela, mas o que desencadeou o problema foi a:"
+                    android:src="@drawable/questao1"
                     />
+
             </LinearLayout>
 
 
-        </ScrollView>
 
         <Button
             android:id="@+id/choice1"
@@ -94,7 +84,7 @@
             android:textColor="@color/nomeBotoes"
             android:textColorHighlight="#060505"
             android:textColorHint="#0a0909"
-            android:textSize="10dp" />
+            android:textSize="8dp" />
 
 
         <Button
@@ -111,7 +101,7 @@
             android:textColor="@color/nomeBotoes"
             android:textColorHighlight="#060505"
             android:textColorHint="#0a0909"
-            android:textSize="10dp" />
+            android:textSize="8dp" />
 
         <Button
             android:id="@+id/choice3"
@@ -127,7 +117,7 @@
             android:textColor="@color/nomeBotoes"
             android:textColorHighlight="@color/background_floating_material_light"
             android:textColorHint="#0a0909"
-            android:textSize="10dp" />
+            android:textSize="8dp" />
 
         <LinearLayout
             android:id="@+id/linear_id"
@@ -161,8 +151,6 @@
                     android:id="@+id/descricao_resposta"
                     android:layout_width="217dp"
                     android:layout_height="match_parent"
-
-
                     android:layout_marginRight="5dp"
                     android:fontFamily="@font/roboto_light"
                     android:gravity="center"
@@ -226,12 +214,10 @@
             android:textColor="@color/nomeBotoes"
             android:textColorHighlight="#060505"
             android:textColorHint="#0a0909"
-            android:textSize="10dp" />
+            android:textSize="8dp" />
 
 
     </RelativeLayout>
-
-
 
 
 </LinearLayout>

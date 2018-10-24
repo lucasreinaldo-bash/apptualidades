@@ -1,4 +1,4 @@
-package vostore.apptualidade.testeingles;
+package vostore.apptualidade.Fragments;
 
 
 import android.os.Bundle;

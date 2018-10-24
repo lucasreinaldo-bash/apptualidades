@@ -1,4 +1,4 @@
-package vostore.apptualidade.testeingles;
+package vostore.apptualidade.Fragments;
 
 
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import vostore.apptualidade.MainActivity;
 import vostore.apptualidade.R;
+import vostore.apptualidade.Simulado.QuizActivity;
 
 /**
  * A simple {@link Fragment} subclass.

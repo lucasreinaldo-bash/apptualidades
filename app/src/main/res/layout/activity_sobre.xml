@@ -20,13 +20,18 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="355dp"
-        android:layout_height="307dp"
+        android:layout_height="502dp"
         android:fontFamily="@font/roboto_thin"
-        android:textColor="@android:color/black"
         android:gravity="bottom"
-        android:text="O APPTUALIDADES É UM APP CRIADO POR ALUNAS DO OITAVO SEMESTRE DE JORNALISMO PARA AUXILIAR VESTIBULANDOS A SE PREPARAREM DE FORMA DIVERTIDA PARA AS PROVAS DE ATUALIDADES."
+        android:padding="10dp"
+        android:text="O Apptualidades, como indica o nome, é um aplicativo de atualidades em formato de game para vestibulandos. Aqui você simula questões que podem ser abordadas nos vestibulares - mas, calma! Não tem fórmula mágica, só muita pesquisa.
+
+A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no vestibular 10/10. Por isso, também criamos uma série de conteúdos pra você se aprofundar nos temas mais importantes (sem cair naquela chatice).
+
+O Apptualidades é o Trabalho de Conclusão de Curso (o famigerado TCC) criado por quatro estudantes de jornalismo da Universidade Metodista de São Paulo - Amanda Leonelli, Larissa Ribeiro, Nathalia Torres e Thaís Augusto. A gente sabe que o vestibular é pesado, mas estudar não precisa ser assim tão chato, né?"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="3dp"
         tools:layout_editor_absoluteY="0dp" />
 </RelativeLayout>

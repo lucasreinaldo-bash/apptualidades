@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/sobre_logo"
-    tools:context=".testeingles.SobreFragment">
+    tools:context=".Fragments.SobreFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout

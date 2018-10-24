@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import vostore.apptualidade.testeingles.QuizActivity;
+import vostore.apptualidade.Simulado.QuizActivity;
 
 public class Respostas extends AppCompatActivity {
 

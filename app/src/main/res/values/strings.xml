@@ -2,6 +2,11 @@
     <string name="app_name">AppTualidade</string>
     <string name="facebook_application_id">882597665279236</string>
     <string name="fb_login_protocol_scheme">fb882597665279236</string>
+    <string name="sobre">O Apptualidades, como indica o nome, é um aplicativo de atualidades em formato de game para vestibulandos. Aqui você simula questões que podem ser abordadas nos vestibulares - mas, calma! Não tem fórmula mágica, só muita pesquisa.
+
+A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no vestibular 10/10. Por isso, também criamos uma série de conteúdos pra você se aprofundar nos temas mais importantes (sem cair naquela chatice).
+
+        O Apptualidades é o Trabalho de Conclusão de Curso (o famigerado TCC) criado por quatro estudantes de jornalismo da Universidade Metodista de São Paulo - Amanda Leonelli, Larissa Ribeiro, Nathalia Torres e Thaís Augusto. A gente sabe que o vestibular é pesado, mas estudar não precisa ser assim tão chato, né?</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

@@ -1,4 +1,4 @@
-package vostore.apptualidade.testeingles;
+package vostore.apptualidade.Simulado;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import vostore.apptualidade.Inicio;
 import vostore.apptualidade.R;
 import vostore.apptualidade.SplashActivity;
 
@@ -27,22 +28,12 @@ public class HighestScoreActivity extends AppCompatActivity {
         voltar = (ImageView) findViewById(R.id.voltar_id);
 
 
-        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(HighestScoreActivity.this);
-        alertDialog.setTitle("Terminou !");
-        alertDialog.setIcon(R.drawable.ok);
-        alertDialog.setMessage("Você chegou ao fim de nossa jornada por aqui, mas ainda tem muito mais em nosso site!");
-        alertDialog.setPositiveButton("Entendi", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                alertDialog.setCancelable(true);
-            }
-        });
-       alertDialog.show();
+
 
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(HighestScoreActivity.this, SplashActivity.class);
+                Intent intent = new Intent(HighestScoreActivity.this, Inicio.class);
                 startActivity(intent);
             }
         });
@@ -53,7 +44,7 @@ public class HighestScoreActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int score = intent.getIntExtra("score", 0);
         // display current score
-        txtScore.setText("Parabéns pelos seus "+score+" acertos.");
+        txtScore.setText(score+" pontos!");
 
         // use Shared preferences to save the best score
         SharedPreferences mypref = getPreferences(MODE_PRIVATE);

@@ -4,13 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.ImageView;
-
-import vostore.apptualidade.testeingles.QuizActivity;
 
 
 /**
@@ -33,17 +26,7 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
     //Determinando o tempo de 3 segundos para entrar na próxima activity
         Handler handler = new Handler();
         handler.postDelayed(this, 5000);
-
-       /*comecar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SplashActivity.this, QuizActivity.class);
-                startActivity(intent);
-
-
-            }
-        }); */
-    }
+   }
 
     //Usando intent no método run
     public void run(){
