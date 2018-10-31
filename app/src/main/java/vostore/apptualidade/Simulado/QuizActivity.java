@@ -27,7 +27,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView mQuestionView;  //current question to answer
     private TextView resposta_certa,resposta_descricao;
     private Button leia,btnAvancar;
-    private ImageView progressBar;
+    private ImageView questao,progressBar;
     private Button mButtonChoice1; // multiple choice 1 for mQuestionView
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
@@ -51,11 +51,12 @@ public class QuizActivity extends AppCompatActivity {
 */
      //Fazendo Cast
         progressBar = findViewById(R.id.progress);
+        questao = findViewById(R.id.questao_id);
         linear2 = findViewById(R.id.linear_id2);
         linear3 = findViewById(R.id.linear_id3);
         linear = findViewById(R.id.linear_id);
         mScoreView = findViewById(R.id.score);
-        mQuestionView = findViewById(R.id.question);
+       // mQuestionView = findViewById(R.id.question);
 
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
@@ -68,8 +69,8 @@ public class QuizActivity extends AppCompatActivity {
 
 
         //Instanciando sons para serem reproduzidos de acordo com resposta do usuário
-        mp1 = MediaPlayer.create(QuizActivity.this, R.raw.correct);
-        mp2 = MediaPlayer.create(QuizActivity.this, R.raw.wrong);
+        //mp1 = MediaPlayer.create(QuizActivity.this, R.raw.correct);
+        //mp2 = MediaPlayer.create(QuizActivity.this, R.raw.wrong);
 
         //Método que carrega as primeiras questões do Simulado
         updateQuestion();
@@ -207,11 +208,15 @@ public class QuizActivity extends AppCompatActivity {
             switch (mQuestionNumber){
                 case 1:
                     Drawable drawable1= getResources().getDrawable(R.drawable.progress2);
+                    Drawable questao2= getResources().getDrawable(R.drawable.question2);
+                    questao.setImageDrawable(questao2);
                     progressBar.setImageDrawable(drawable1);
                     break;
                 case 2:
-                    Drawable drawable2= getResources().getDrawable(R.drawable.progress2);
+                    Drawable drawable2= getResources().getDrawable(R.drawable.progress3);
+
                     progressBar.setImageDrawable(drawable2);
+
                     break;
                 case 3:
                     Drawable drawable3= getResources().getDrawable(R.drawable.progress3);
@@ -256,7 +261,7 @@ public class QuizActivity extends AppCompatActivity {
 
             linear.setVisibility(View.INVISIBLE);
             // set the text for new question, and new 4 alternative to answer on four buttons
-            mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+            //mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
             mButtonChoice1.setText(mQuestionLibrary.getChoice(mQuestionNumber, 1));
             mButtonChoice2.setText(mQuestionLibrary.getChoice(mQuestionNumber, 2));
             mButtonChoice3.setText(mQuestionLibrary.getChoice(mQuestionNumber, 3));
@@ -333,7 +338,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
             //Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
-            mp1.start();
+        //    mp1.start();
             //updateScore(mScore);
             //updateQuestion();
            // Toast.makeText(QuizActivity.this, "Acertou!", Toast.LENGTH_SHORT).show();
@@ -341,7 +346,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
         } else {
-            mp2.start();
+            //mp2.start();
             linear.setVisibility(View.VISIBLE);
 
 
@@ -384,7 +389,7 @@ public class QuizActivity extends AppCompatActivity {
             // show current total score for the user
             vibrar();
 
-            mp2.start();
+           // mp2.start();
             // once user answer the question, we move on to the next one, if any
             //updateQuestion();
         }
@@ -415,5 +420,17 @@ public class QuizActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        savedInstanceState.putBoolean("MyBoolean", true);
+        savedInstanceState.putDouble("myDouble", 1.9);
+        savedInstanceState.putInt("MyInt",1);
+        savedInstanceState.putString("MyString", "Welcome back to Android");
+        // etc.
     }
 }

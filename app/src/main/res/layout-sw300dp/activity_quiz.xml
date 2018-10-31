@@ -12,6 +12,10 @@
     tools:context=".Simulado.QuizActivity"
     android:background="@drawable/fundoquiz">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <TextView
         android:id="@+id/score"
@@ -226,5 +230,5 @@
 
     </LinearLayout>
 
-
+    </ScrollView>
 </LinearLayout>

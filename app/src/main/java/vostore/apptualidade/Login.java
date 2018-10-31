@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -110,9 +111,10 @@ public class Login extends AppCompatActivity {
         cadastre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Login.this,Inicio.class);
+                Intent intent = new Intent(Login.this,Cadastro.class);
                 startActivity(intent);
                 finish();
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -130,8 +132,17 @@ public class Login extends AppCompatActivity {
                                         Intent intent = new Intent(Login.this,Inicio.class);
                                         startActivity(intent);
                                         finish();
+                                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                                     } else{
-                                        Toast.makeText(Login.this,"Não foi possível entrar no ambiente",Toast.LENGTH_SHORT).show();
+                                        Toast toast = new Toast(Login.this);
+                                        ImageView view = new ImageView(Login.this);
+                                        view.setImageResource(R.drawable.toast_erro);
+                                        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                                        toast.setView(view);
+                                        toast.show();
+
+
+                                       // Toast.makeText(Login.this,"Não foi possível entrar no ambiente",Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -160,7 +171,7 @@ public class Login extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        mCallbackManager.onActivityResult(requestCode, resultCode, data);
+       // mCallbackManager.onActivityResult(requestCode, resultCode, data);
 
     }
 

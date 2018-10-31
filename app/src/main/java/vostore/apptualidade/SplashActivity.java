@@ -32,6 +32,7 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
     public void run(){
         startActivity(new Intent(this, Entrar.class));
         finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     @Override

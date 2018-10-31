@@ -68,7 +68,7 @@ public class HighestScoreActivity extends AppCompatActivity {
     @Override
     public void onBackPressed () {
 
-        Intent intent = new Intent(HighestScoreActivity.this,SplashActivity.class);
+        Intent intent = new Intent(HighestScoreActivity.this,Inicio.class);
         startActivity(intent);
         finish();
     }

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:background="@drawable/fundocadastro"
+    >
+
+
+    <ImageView
+        android:id="@+id/logologin"
+        android:layout_width="match_parent"
+        android:layout_height="181dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/logologin" />
+
+
+    <Button
+        android:id="@+id/botaoentrar"
+        android:layout_width="253dp"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="93dp"
+        android:background="@drawable/botaoentrar3" />
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardView"
+        android:layout_width="283dp"
+        android:layout_height="181dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="153dp"
+        android:elevation="10sp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="5sp">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="15sp">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/emailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="seuemail@dominio.com"
+                android:maxLength="50"
+                android:padding="10sp"
+                android:text="vostorebr@gmail.com"
+                android:textSize="10sp"
+                app:met_baseColor="#323333"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="E-mail"
+                app:met_floatingLabelTextColor="#242626"
+                app:met_primaryColor="#982360"
+                card_view:met_checkCharactersCountAtBeginning="true"
+                card_view:met_iconRight="@drawable/ic_mensagem" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/senhaid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Senha de Acesso"
+                android:inputType="numberPassword"
+                android:padding="10sp"
+                android:text="221295"
+                android:textSize="10sp"
+                app:met_baseColor="#242626"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="Senha"
+                app:met_floatingLabelTextColor="#242626"
+                app:met_primaryColor="#982360"
+                card_view:met_iconRight="@drawable/ic_locker" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="124dp"
+        android:layout_height="27dp"
+        android:layout_alignEnd="@+id/cardView"
+        android:layout_alignTop="@+id/btn_facebook"
+        android:layout_marginEnd="13dp"
+        android:background="@drawable/botaogoogle" />
+
+    <Button
+        android:id="@+id/btn_facebook"
+        android:layout_width="124dp"
+        android:layout_height="27dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/botaoentrar"
+        android:layout_marginBottom="53dp"
+        android:layout_marginStart="4dp"
+        android:background="@drawable/botaofacebook" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="18dp"
+            android:layout_toStartOf="@+id/btn_facebook"
+            android:fontFamily="@font/roboto_condensed_light"
+            android:text="Não tem uma conta? "
+            android:textColor="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textView5"
+            style="text-decoration:underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btn_facebook"
+            android:layout_alignTop="@+id/btnRegistrar"
+            android:layout_marginLeft="5dp"
+            android:fontFamily="@font/roboto_condensed_light"
+            android:text="Cadastre-se"
+            android:textColor="#7c7c7a"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

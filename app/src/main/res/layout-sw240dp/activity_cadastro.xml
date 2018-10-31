@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cadastro"
+    android:background="@drawable/fundocadastro"
+    >
+
+    <Button
+        android:id="@+id/botaocadastrar"
+        android:layout_width="286dp"
+        android:layout_height="65dp"
+
+
+        android:layout_above="@+id/btn_facebook"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/botao_layout_cadastro" />
+
+    <Button
+        android:id="@+id/btn_facebook"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/botaofacebook" />
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/btn_facebook"
+        android:layout_toEndOf="@+id/btn_facebook"
+        android:background="@drawable/botaogoogle" />
+
+    <ImageView
+        android:id="@+id/logocadastrar"
+        android:layout_width="204dp"
+        android:layout_height="90dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/logocadastrar" />
+
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardView"
+        android:layout_width="283dp"
+        android:layout_height="272dp"
+
+        android:layout_above="@+id/botaocadastrar"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="15sp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="5sp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/rg_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Nome"
+                android:paddingLeft="10sp"
+                android:textSize="10sp"
+                app:met_baseColor="#3b3a3a"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="NOME"
+                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_primaryColor="#982360"
+                card_view:met_iconRight="@drawable/user" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/rg_sobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rg_nome"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Sobrenome"
+                android:padding="10sp"
+                android:textSize="10sp"
+                app:met_baseColor="#3b3a3a"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="SOBRENOME"
+                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_primaryColor="#982360"
+                card_view:met_iconRight="@drawable/user" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/rg_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rg_sobrenome"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="seuemail@email.com"
+                android:inputType="textEmailAddress"
+                android:padding="10sp"
+
+                android:textSize="10sp"
+                app:met_baseColor="#3b3a3a"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+
+                app:met_floatingLabelText="E-MAIL"
+                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_primaryColor="#982360"
+                card_view:met_iconRight="@drawable/msg" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/rg_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rg_email"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Senha de Acesso"
+                android:inputType="numberPassword"
+                android:padding="10sp"
+                android:text="221295"
+                android:textSize="10sp"
+                app:met_baseColor="#3b3a3a"
+                app:met_errorColor="#ddaa00"
+                app:met_floatingLabel="highlight"
+
+                app:met_floatingLabelText="SENHA"
+                app:met_floatingLabelTextColor="@android:color/darker_gray"
+                app:met_primaryColor="#585556"
+                card_view:met_iconRight="@drawable/lock" />
+
+
+        </RelativeLayout>
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+</RelativeLayout>
