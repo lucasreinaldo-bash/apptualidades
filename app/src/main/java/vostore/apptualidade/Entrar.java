@@ -31,7 +31,7 @@ public class Entrar extends AppCompatActivity {
                 Intent intent = new Intent(Entrar.this, Login.class);
                 startActivity(intent);
                 finish();
-                overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+                //as linhas overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
 
 
             }

@@ -15,6 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.facebook.FacebookSdk;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
+import com.google.firebase.auth.FirebaseAuth;
+
 import vostore.apptualidade.Fragments.FavoritosFragment;
 import vostore.apptualidade.Fragments.SairFragment;
 import vostore.apptualidade.Fragments.SimuladoFragment;
@@ -29,6 +36,8 @@ public class Inicio extends AppCompatActivity {
     private SimuladoFragment simuladoFragment;
     private SobreFragment sobreFragment;
     private SairFragment sairFragment;
+    private FirebaseAuth mAuth;
+    private  GoogleApiClient googleApiClient;
 
 
     @Override
@@ -47,7 +56,7 @@ public class Inicio extends AppCompatActivity {
         mFrame = findViewById(R.id.main_frame);
         mNavigation = findViewById(R.id.navigation);
 
-
+        mAuth = FirebaseAuth.getInstance();
 
 
 
@@ -125,4 +134,6 @@ public class Inicio extends AppCompatActivity {
 
 
     }
+
+
 }

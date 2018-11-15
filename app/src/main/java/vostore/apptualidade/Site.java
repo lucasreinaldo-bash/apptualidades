@@ -44,7 +44,7 @@ public class Site extends AppCompatActivity {
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("http://apptualidades.com.br/fake-news/");
+        mWebView.loadUrl("http://apptualidades.com.br/agrotoxicos/");
         mWebView.setWebViewClient(new HelloWebViewClient());
 
 

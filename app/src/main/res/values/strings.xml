@@ -7,23 +7,32 @@
 A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no vestibular 10/10. Por isso, também criamos uma série de conteúdos pra você se aprofundar nos temas mais importantes (sem cair naquela chatice).
 
         O Apptualidades é o Trabalho de Conclusão de Curso (o famigerado TCC) criado por quatro estudantes de jornalismo da Universidade Metodista de São Paulo - Amanda Leonelli, Larissa Ribeiro, Nathalia Torres e Thaís Augusto. A gente sabe que o vestibular é pesado, mas estudar não precisa ser assim tão chato, né?</string>
-
+    <string name="username_app">firebase_user</string>
+    <string name="id_user_app">id_user_app</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
+    <string name="email_app">firebase_email</string>
     <string name="action_settings">Settings</string>
-
+    <string name="key_app"></string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_cursos">cursos</string>
     <string name="large_text">
 
+
+
+    <string name="password">Password</string>0
+
+
     </string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="textocadastro">Não tem conta? Cadastre-se</string>
     <string name="redesSociais">Redes Sociais</string>
     <string name="btn_leia">LEIA MAIS</string>
+    <string name="regras_text">O sistema de pontuação do Apptualidades permite que você acompanhe sua evolução ao longo do tempo.Você recebe uma pontuação para cada ação importante dentro do aplicativo.</string>
+    <string name="simulado">SIMULADO</string>
+    <string name="regra2">Não basta testar seu conhecimento - para ir bem nas provas, é necessário colocar a mão na massa.Por isso, filtramos os conteúdos que importam para que você aprenda sobre os principais assuntos.O estudante que decidir se aprofundar lendo as matérias completas recee mais cinco pontos. No final, a pontuação máxima pode chegar até 100 pontos.</string>
     <string name="btn_questao2">QUESTÃO 2</string>
     <string name="btn_questao3">QUESTÃO 3</string>
     <string name="btn_questao4">QUESTÃO 4</string>
@@ -35,15 +44,24 @@ A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no ve
     <string name="btn_questao10">QUESTÃO 10</string>
 
 
+    <string name="questao6_1">FIM DA COBRANÇA DO PEDÁGIO POR PESO CAMINHÃO</string>
+    <string name="questao6_2">VARIAÇÃO DE PREÇO DO DIESEL CONSTANTE</string>
+    <string name="questao6_4">FIM DA COBRANÇA DO PEDÁGIO POR EIXOS SUSPENSOS</string>
+    <string name="questao6_3">FIM DA DEFINIÇÃO DE PREÇOS DE FRETE MÍNIMO PELA ANTT (AGÊNCIA NACIONAL DE TRANSPORTES TERRESTRES).OS CAMINHONEIROS QUERIAM QUE OS VALORES FOSSEM DECIDIDOS PELO SINDICATO</string>
+
 
     <string name="facebook">Facebook</string>
     <string name="youtube">Youtube</string>
     <string name="resposta_certa"></string>
-    <string name="descricao_1"> <b>Resposta Certa:</b> Responsável por 96% das exportações da Venezuela, o petróleo se tornaria a maldição do país a partir de 2014, quando o preço do barril começava a despencar. Com a desvalorização, o governo não conseguia gerar receitas suficientes para manter o país nos trilhos. </string>
-    <string name="descricao_2"> <b>Resposta Certa:</b> A Venezuela importa quase todos os seus produtos, inclusive itens básicos como a pasta de dente. Sem dinheiro, o governo não consegue comprar do exterior, causando escassez. Com a alta demanda (e pouca oferta), a inflação explode, diminuindo o poder de compra da população. </string>
-    <string name="descricao_3"> <b>Resposta Certa:</b> O Domingo Sangrento comoveu a opinião pública, principalmente após Luther King promover uma marcha em resposta ao ataque. No mesmo ano foi aprovada a Lei dos Direitos ao Voto.</string>
-
-
+    <string name="descricao_1"> Atualmente, a aprovação de um produto agrotóxico depende de manifestação favorável do Ministério da Saúde, do Ministério do Meio Ambiente (MMA) e do Ministério da Agricultura, Pecuária e Abastecimento (Mapa). O novo projeto de lei deixa esta competência apenas para o Ministério da Agricultura, o que impede a avaliação dos agrotóxicos em diversos aspectos, podendo gerar reações e impactos negativos na saúde e no meio ambiente. </string>
+    <string name="descricao_2"> Em comparação aos anos anteriores, o acesso à saúde, desde informações, a tratamentos e medicação, evoluiu. A mulher também assumiu um controle maior sobre o seu corpo e sobre a decisão de ter ou não filhos e quando. Em 2060, a taxa de fecundidade deverá cair para 1,66 filho por mulher - atualmente, a média é de 1,77.</string>
+    <string name="descricao_3"> A Venezuela importa quase todos os seus produtos, inclusive itens básicos como a pasta de dente. Sem dinheiro, o governo não consegue comprar do exterior, causando escassez. Com a alta demanda (e pouca oferta), a inflação explode, diminuindo o poder de compra da população. </string>
+    <string name="descricao_4"> O Domingo Sangrento comoveu a opinião pública, principalmente após Luther King promover uma marcha em resposta ao ataque. No mesmo ano foi aprovada a Lei dos Direitos ao Voto.</string>
+    <string name="descricao_5"> Para o governo norte-coreano, as armas nucleares são a única maneira de garantir a sobrevivência do regime frente aos “inimigos”, como os Estados Unidos e Japão. As aspirações nucleares da península datam da década de 60, mas se fortaleceram com o atual líder Kim Jong-Un.</string>
+    <string name="descricao_7"> Entre os quatro países que mais prendem em todo o mundo, o Brasil é o único que continua aumentando o encarceramento nos últimos 20 anos. Enquanto outras nações dão preferência ao uso de penas alternativas para delitos menores, como o tráfico de drogas, o Brasil une presos comuns e membros de facções.</string>
+    <string name="descricao_8"> Segundo o governo da península, as armas nucleares são a única maneira de garantir a sobrevivência do regime frente aos “inimigos”, como os Estados Unidos e Japão. As aspirações nucleares da Coreia datam da década de 60, mas se fortaleceram com o atual líder Kim Jong-Un.</string>
+    <string name="descricao_9"> Responsável por 96% das exportações da Venezuela, o petróleo se tornaria a maldição do país a partir de 2014, quando o preço do barril começava a despencar. Com a desvalorização, o governo não conseguia gerar receitas suficientes para manter o país nos trilhos.</string>
+    <string name="descricao_10"> Enquanto 1,5 milhão de LEIA MAIS meninas estão fora da escola do Brasil, 29,6% possuem filhos e 93% são meninas negras envolvidas em trabalhos domésticos. Apenas 30% da população não-branca do Brasil termina a escola, enquanto 30% dos analfabetos ou pessoas fora da escola são indígenas.</string>
 
 
 

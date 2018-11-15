@@ -3,6 +3,7 @@ package vostore.apptualidade.Simulado;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Vibrator;
@@ -10,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -24,7 +26,7 @@ public class QuizActivity extends AppCompatActivity {
 
     private QuestionBank mQuestionLibrary = new QuestionBank();
     private TextView mScoreView;   // view for current total score
-    private TextView mQuestionView;  //current question to answer
+    private TextView mQuestionView,mQuestionView2;  //current question to answer
     private TextView resposta_certa,resposta_descricao;
     private Button leia,btnAvancar;
     private ImageView questao,progressBar;
@@ -32,6 +34,7 @@ public class QuizActivity extends AppCompatActivity {
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
+    private Button questao6_2, questao6_4; // multiple choice 4 for mQuestionView
     private String mAnswer;  // correct answer for question in mQuestionView
     private int mScore = 0; 
     private int mQuestionNumber = 0; // current question number
@@ -40,7 +43,7 @@ public class QuizActivity extends AppCompatActivity {
     private int cod = 0;
     public LinearLayout linear,linear2,linear3;
     private MediaPlayer mp1, mp2;
-
+    private LinearLayout linear6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,8 +58,13 @@ public class QuizActivity extends AppCompatActivity {
         linear2 = findViewById(R.id.linear_id2);
         linear3 = findViewById(R.id.linear_id3);
         linear = findViewById(R.id.linear_id);
+        linear6 = findViewById(R.id.linear_questao6);
         mScoreView = findViewById(R.id.score);
-       // mQuestionView = findViewById(R.id.question);
+         mQuestionView = findViewById(R.id.question);
+         mQuestionView2 = findViewById(R.id.questionparte2);
+
+         questao6_2 = findViewById(R.id.questao6_2);
+         questao6_4 = findViewById(R.id.questao6_4);
 
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
@@ -65,7 +73,16 @@ public class QuizActivity extends AppCompatActivity {
 
         btnAvancar = findViewById(R.id.btn_avancar);
         leia = findViewById(R.id.btn_leia);
-        resposta_descricao = findViewById(R.id.descricao_resposta);
+        //resposta_descricao = findViewById(R.id.descricao_resposta);
+
+
+
+        WebView webView = findViewById(R.id.descricao_resposta);
+        String text;
+        text = "<html><style type=\"text/css\" > @font=face { font-family: MyFont; src: url (\"file:///android_font/roboto_light.ttf\")  } body { font-family: MyFont;  font-size: 12px;  text-align: justify;   }  <p> { color: #787879;}</style><body><p color:#787879 align=\"justify\"><b>Resposta Certa:</b>"
+        + getString(R.string.descricao_1) + "</p> </body></html>";
+        webView.loadData(text,"text/html;charset=UTF-8",null);
+
 
 
         //Instanciando sons para serem reproduzidos de acordo com resposta do usuário
@@ -206,50 +223,79 @@ public class QuizActivity extends AppCompatActivity {
         if (mQuestionNumber < mQuestionLibrary.getLength()) {
 
             switch (mQuestionNumber){
+                case 0:
+                    mQuestionView.setVisibility(View.VISIBLE);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    mQuestionView2.setVisibility(View.GONE);
+
+                    break;
+
                 case 1:
+                    //mQuestionView.setVisibility(View.VISIBLE);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable1= getResources().getDrawable(R.drawable.progress2);
-                    Drawable questao2= getResources().getDrawable(R.drawable.question2);
-                    questao.setImageDrawable(questao2);
+                    //Drawable questao2= getResources().getDrawable(R.drawable.question2);
+                    //questao2.setBackground(questao2);
                     progressBar.setImageDrawable(drawable1);
                     break;
                 case 2:
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    questao.setVisibility(View.VISIBLE);
                     Drawable drawable2= getResources().getDrawable(R.drawable.progress3);
-
                     progressBar.setImageDrawable(drawable2);
+                    Drawable questao3= getResources().getDrawable(R.drawable.img_questao3);
+                    questao.setBackground(questao3);
+                    mQuestionView2.setVisibility(View.VISIBLE);
+                    mQuestionView2.setText("O principal motivo para o êxodo venezuelano é a:");
 
                     break;
                 case 3:
-                    Drawable drawable3= getResources().getDrawable(R.drawable.progress3);
+
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    Drawable drawable3= getResources().getDrawable(R.drawable.progress4);
                     progressBar.setImageDrawable(drawable3);
+                    //Drawable questao4= getResources().getDrawable(R.drawable.questao4);
+                    questao.setVisibility(View.GONE);
+                    mQuestionView2.setVisibility(View.GONE);
                     break;
                 case 4:
-                    Drawable drawable4= getResources().getDrawable(R.drawable.progress4);
+                    mQuestionView.setVisibility(View.GONE);
+                    questao.setVisibility(View.VISIBLE);
+                    Drawable questao4= getResources().getDrawable(R.drawable.img_questao5);
+                    questao.setBackground(questao4);
+                    mQuestionView2.setVisibility(View.VISIBLE);
+                    mQuestionView2.setText("É correto afirmar que o aumento no número de casos deve-se principalmente:");
+                    Drawable drawable4= getResources().getDrawable(R.drawable.progress5);
                     progressBar.setImageDrawable(drawable4);
                     break;
                 case 5:
-                    Drawable drawable5= getResources().getDrawable(R.drawable.progress5);
+                    mQuestionView.setVisibility(View.VISIBLE);
+                    questao.setVisibility(View.GONE);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    Drawable drawable5= getResources().getDrawable(R.drawable.progress6);
                     progressBar.setImageDrawable(drawable5);
+                    linear6.setVisibility(View.VISIBLE);
+                    mQuestionView2.setVisibility(View.VISIBLE);
+                    mQuestionView2.setText("Quais alternativas são verdadeiras?");
                     break;
                 case 6:
-                    Drawable drawable6= getResources().getDrawable(R.drawable.progress6);
+                    linear.setVisibility(View.GONE);
+                    Drawable drawable6= getResources().getDrawable(R.drawable.progress7);
                     progressBar.setImageDrawable(drawable6);
                     break;
                 case 7:
-                    Drawable drawable7= getResources().getDrawable(R.drawable.progress7);
+                    Drawable drawable7= getResources().getDrawable(R.drawable.progress8);
                     progressBar.setImageDrawable(drawable7);
                     break;
                 case 8:
-                    Drawable drawable8= getResources().getDrawable(R.drawable.progress8);
+                    Drawable drawable8= getResources().getDrawable(R.drawable.progress9);
                     progressBar.setImageDrawable(drawable8);
                     break;
                 case 9:
-                    Drawable drawable9= getResources().getDrawable(R.drawable.progress9);
+                    Drawable drawable9= getResources().getDrawable(R.drawable.progress10);
                     progressBar.setImageDrawable(drawable9);
                     break;
-                case 10:
-                    Drawable drawable10= getResources().getDrawable(R.drawable.progress10);
-                    progressBar.setImageDrawable(drawable10);
-                    break;
+
             }
 
 
@@ -261,7 +307,7 @@ public class QuizActivity extends AppCompatActivity {
 
             linear.setVisibility(View.INVISIBLE);
             // set the text for new question, and new 4 alternative to answer on four buttons
-            //mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+
             mButtonChoice1.setText(mQuestionLibrary.getChoice(mQuestionNumber, 1));
             mButtonChoice2.setText(mQuestionLibrary.getChoice(mQuestionNumber, 2));
             mButtonChoice3.setText(mQuestionLibrary.getChoice(mQuestionNumber, 3));
@@ -315,23 +361,45 @@ public class QuizActivity extends AppCompatActivity {
             linear.setVisibility(View.VISIBLE);
 
 
-            if (mQuestionNumber < mQuestionLibrary.getLength()){
-                switch (mQuestionNumber){
+            switch (mQuestionNumber) {
 
-                    case 1:
-                        resposta_descricao.setText(R.string.descricao_1);
-                        break;
-                    case 2:
-                        resposta_descricao.setText(R.string.descricao_2);
-                        break;
-                    case 3:
-                        resposta_descricao.setText(R.string.descricao_3);
-                        break;
+                case 0:
+                    //resposta_descricao.setText(R.string.descricao_1);
+                    break;
+                case 1:
 
+                    break;
+                case 2:
 
+                    break;
+                case 3:
 
-                }
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
             }
+
+
+
+
+
+
 
 
 
@@ -348,7 +416,40 @@ public class QuizActivity extends AppCompatActivity {
         } else {
             //mp2.start();
             linear.setVisibility(View.VISIBLE);
+            switch (mQuestionNumber) {
 
+                case 0:
+                    //resposta_descricao.setText(R.string.descricao_1);
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+                    questao6_2.setBackgroundResource(R.drawable.botao_quiz);
+                    questao6_4.setBackgroundResource(R.drawable.botao_quiz);
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+
+                    break;
+            }
 
 
 

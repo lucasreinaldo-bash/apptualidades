@@ -13,9 +13,10 @@
     <ImageView
         android:id="@+id/logologin"
         android:layout_width="match_parent"
-        android:layout_height="207dp"
+        android:layout_height="242dp"
+        android:layout_above="@+id/cardView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginBottom="35dp"
         app:srcCompat="@drawable/logologin" />
 
 
@@ -25,21 +26,20 @@
         android:layout_height="51dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="126dp"
+        android:layout_marginBottom="110dp"
         android:background="@drawable/botaoentrar3" />
 
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardView"
         android:layout_width="283dp"
         android:layout_height="181dp"
         android:layout_alignParentBottom="true"
-        card_view:cardCornerRadius="5sp"
-        android:elevation="10sp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginBottom="186dp"
-        card_view:cardBackgroundColor="@android:color/white">
+        android:layout_marginBottom="181dp"
+        android:elevation="10sp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardCornerRadius="5sp">
 
         <LinearLayout
 
@@ -59,6 +59,7 @@
                 android:padding="10sp"
                 android:textSize="10sp"
                 app:met_baseColor="#323333"
+                android:singleLine="true"
                 app:met_errorColor="#ddaa00"
                 app:met_floatingLabel="highlight"
                 app:met_floatingLabelText="E-mail"
@@ -76,6 +77,7 @@
                 android:hint="Senha de Acesso"
                 android:inputType="numberPassword"
                 android:padding="10sp"
+                android:singleLine="true"
                 android:textSize="10sp"
                 app:met_baseColor="#242626"
                 app:met_errorColor="#ddaa00"
@@ -99,19 +101,20 @@
 
     <Button
         android:id="@+id/btn_google"
-        android:layout_width="128dp"
+        android:layout_width="124dp"
         android:layout_height="27dp"
         android:layout_alignEnd="@+id/cardView"
         android:layout_alignTop="@+id/btn_facebook"
+        android:layout_marginEnd="13dp"
         android:background="@drawable/botaogoogle" />
 
     <Button
         android:id="@+id/btn_facebook"
-        android:layout_width="128dp"
+        android:layout_width="124dp"
         android:layout_height="27dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/botaoentrar"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="71dp"
         android:background="@drawable/botaofacebook" />
 
 

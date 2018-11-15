@@ -5,41 +5,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@drawable/fundoquiz"
     android:orientation="vertical"
-
     tools:context=".Simulado.QuizActivity">
 
 
-
-
-
-            <TextView
-                android:id="@+id/score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="70dp"
-                android:fontFamily="@font/roboto_condensed_regular"
-                android:text="1 de 10"
-                android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-                android:textColor="#e74a58"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/roboto_condensed_regular"
+        android:text="1 de 10"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textColor="#e74a58"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/progress"
         android:layout_width="319dp"
-        android:layout_height="26dp"
+        android:layout_height="42dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_gravity="center"
 
         customfontdemo:srcCompat="@drawable/progress1" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_weight="1">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,63 +43,73 @@
             android:orientation="vertical">
 
 
-                <LinearLayout
-                    android:id="@+id/linearImage"
+            <LinearLayout
+                android:id="@+id/linearImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/question"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/questao_id"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/question1" />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/linearImage"
-                    android:focusable="false" />
+                    android:layout_alignParentTop="true"
+                    android:layout_weight="0.97"
+                    android:fontFamily="@font/roboto_condensed_light"
+                    android:padding="4dp"
+                    android:text="O projeto de lei 6.299/2002 apresenta diversas mudanças relacionadas ao uso, controle e registro dos agrotóxicos no Brasil. Uma das alterações mais preocupantes relacionadaaos riscos e possíveis problemas de saúde da população é:"
+
+                    android:textColor="@color/perguntas"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/questao_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/img_questao3"
+                    android:visibility="gone" />
 
                 <LinearLayout
+                    android:id="@+id/linear_questao6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/linear_id"
-                    android:layout_alignParentStart="true"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <Button
 
-                        android:id="@+id/choice2"
+                        android:id="@+id/questao6_1"
                         android:layout_width="330dp"
                         android:layout_height="46dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/botao_atualidades"
-                        android:onClick="onClick"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_questao6"
                         android:padding="8dp"
-                        android:text="Do"
+                        android:text="@string/questao6_1"
                         android:textColor="@color/nomeBotoes"
                         android:textColorHighlight="#060505"
                         android:textColorHint="#0a0909"
                         android:textSize="8dp" />
 
                     <Button
-                        android:id="@+id/choice1"
+                        android:id="@+id/questao6_2"
                         android:layout_width="330dp"
                         android:layout_height="46dp"
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/botao_atualidades"
-                        android:onClick="onClick"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_questao6"
                         android:padding="8dp"
-                        android:text="Does"
+                        android:text="@string/questao6_2"
                         android:textColor="@color/nomeBotoes"
                         android:textColorHighlight="#060505"
                         android:textColorHint="#0a0909"
@@ -111,123 +117,213 @@
 
 
                     <Button
-                        android:id="@+id/choice4"
+                        android:id="@+id/questao6_3"
                         android:layout_width="330dp"
                         android:layout_height="46dp"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/botao_atualidades"
-                        android:onClick="onClick"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/btn_questao6"
                         android:padding="8dp"
-                        android:text="Does"
+                        android:text="@string/questao6_3"
                         android:textColor="@color/nomeBotoes"
                         android:textColorHighlight="#060505"
                         android:textColorHint="#0a0909"
                         android:textSize="8dp" />
 
                     <Button
-                        android:id="@+id/choice3"
+                        android:id="@+id/questao6_4"
                         android:layout_width="329dp"
                         android:layout_height="46dp"
                         android:layout_alignParentTop="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="5dp"
-                        android:background="@drawable/botao_atualidades"
-                        android:onClick="onClick"
+                        android:background="@drawable/btn_questao6"
                         android:padding="8dp"
-                        android:text="Are"
+                        android:text="@string/questao6_4"
                         android:textColor="@color/nomeBotoes"
                         android:textColorHighlight="@color/background_floating_material_light"
                         android:textColorHint="#0a0909"
                         android:textSize="8dp" />
                 </LinearLayout>
 
+                <TextView
+                    android:id="@+id/questionparte2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="0.97"
+                    android:fontFamily="@font/roboto_condensed_light"
+                    android:padding="4dp"
+
+                    android:text="O projeto de lei 6.299/2002 apresenta diversas mudanças relacionadas ao uso, controle e registro dos agrotóxicos no Brasil. Uma das alterações mais preocupantes relacionadaaos riscos e possíveis problemas de saúde da população é:"
+                    android:textColor="@color/perguntas"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/linear_id"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+
+                    android:id="@+id/choice2"
+                    android:layout_width="330dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/botao_atualidades"
+                    android:onClick="onClick"
+                    android:padding="8dp"
+                    android:text="Do"
+                    android:textColor="@color/nomeBotoes"
+                    android:textColorHighlight="#060505"
+                    android:textColorHint="#0a0909"
+                    android:textSize="8dp" />
+
+                <Button
+                    android:id="@+id/choice1"
+                    android:layout_width="330dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/botao_atualidades"
+                    android:onClick="onClick"
+                    android:padding="8dp"
+                    android:text="Does"
+                    android:textColor="@color/nomeBotoes"
+                    android:textColorHighlight="#060505"
+                    android:textColorHint="#0a0909"
+                    android:textSize="8dp" />
+
+
+                <Button
+                    android:id="@+id/choice4"
+                    android:layout_width="330dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/botao_atualidades"
+                    android:onClick="onClick"
+                    android:padding="8dp"
+                    android:text="Does"
+                    android:textColor="@color/nomeBotoes"
+                    android:textColorHighlight="#060505"
+                    android:textColorHint="#0a0909"
+                    android:textSize="8dp" />
+
+                <Button
+                    android:id="@+id/choice3"
+                    android:layout_width="329dp"
+                    android:layout_height="46dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/botao_atualidades"
+                    android:onClick="onClick"
+                    android:padding="8dp"
+                    android:text="Are"
+                    android:textColor="@color/nomeBotoes"
+                    android:textColorHighlight="@color/background_floating_material_light"
+                    android:textColorHint="#0a0909"
+                    android:textSize="8dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linear_id"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:layout_alignParentBottom="true"
+
+
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/darker_gray"
+                    android:focusable="false" />
+
 
                 <LinearLayout
-                    android:id="@+id/linear_id"
+                    android:id="@+id/linear_id2"
                     android:layout_width="match_parent"
-                    android:layout_height="163dp"
-                    android:layout_alignParentBottom="true"
-
-
-                    android:layout_alignParentStart="true"
-                    android:layout_marginBottom="40dp"
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@android:color/darker_gray"
-                        android:focusable="false" />
+
+                    <WebView
+                        android:id="@+id/descricao_resposta"
+                        android:layout_width="217dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="5dp" />
 
 
                     <LinearLayout
-                        android:id="@+id/linear_id2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:visibility="visible">
+                        android:id="@+id/linear_id3"
+                        android:layout_width="109dp"
+                        android:layout_height="match_parent"
 
+                        android:layout_gravity="center_vertical|center"
+                        android:layout_marginTop="10dp"
+                        android:gravity="right"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/descricao_resposta"
-                            android:layout_width="217dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="5dp"
-                            android:fontFamily="@font/roboto_light"
-                            android:gravity="center"
-                            android:text="@string/descricao_1"
-                            android:textAlignment="textStart"
-                            android:textSize="12sp" />
+                        <Button
+                            android:id="@+id/btn_leia"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/botaopequeno"
+                            android:padding="10dp"
+                            android:text="@string/btn_leia"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
 
+                        <Button
+                            android:id="@+id/btn_avancar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="13dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/botaopequeno"
+                            android:padding="10dp"
+                            android:text="@string/btn_questao2"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp" />
 
-                        <LinearLayout
-                            android:id="@+id/linear_id3"
-                            android:layout_width="109dp"
-                            android:layout_height="88dp"
-
-                            android:layout_marginTop="25sp"
-                            android:gravity="right"
-                            android:orientation="vertical">
-
-                            <Button
-                                android:id="@+id/btn_leia"
-                                android:layout_width="match_parent"
-                                android:layout_height="33dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginBottom="10dp"
-                                android:background="@drawable/botaopequeno"
-                                android:padding="10dp"
-                                android:text="@string/btn_leia"
-                                android:textColor="@android:color/white"
-                                android:textSize="10sp" />
-
-                            <Button
-                                android:id="@+id/btn_avancar"
-                                android:layout_width="match_parent"
-                                android:layout_height="33dp"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerHorizontal="true"
-                                android:layout_marginBottom="13dp"
-                                android:layout_marginTop="5dp"
-                                android:background="@drawable/botaopequeno"
-                                android:padding="10dp"
-                                android:text="@string/btn_questao2"
-                                android:textColor="@android:color/white"
-                                android:textSize="10sp" />
-
-                        </LinearLayout>
                     </LinearLayout>
-
-
                 </LinearLayout>
 
+
+            </LinearLayout>
 
 
         </LinearLayout>
