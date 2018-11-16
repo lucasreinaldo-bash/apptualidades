@@ -51,13 +51,13 @@
             android:id="@+id/button_1"
             android:onClick="onClick"
             android:background="@drawable/botao_customizado"
-            android:layout_above="@+id/voltar_id"
+            android:layout_above="@+id/emoticon"
             android:layout_centerHorizontal="true" />
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:id="@+id/voltar_id"
+        android:id="@+id/emoticon"
         android:background="@drawable/logo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />

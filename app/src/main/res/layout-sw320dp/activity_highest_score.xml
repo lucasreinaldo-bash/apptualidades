@@ -17,21 +17,7 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
-    <TextView
-        android:id="@+id/textScore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:fontFamily="@font/roboto_condensed_bold"
-        android:hint="hghg"
-        android:paddingLeft="15dp"
-        android:text="10 pontos!"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/nomeBotoes"
-        android:textSize="60dp" />
+
 
     <TextView
         android:id="@+id/textHighScore"
@@ -46,7 +32,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@android:color/white"
         android:textSize="20dp"
-        android:visibility="invisible" />
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/button_1"
@@ -61,22 +47,79 @@
         android:onClick="onClick"
         android:textColor="@android:color/black" />
 
-    <ImageView
-        android:id="@+id/voltar_id"
-        android:layout_width="143dp"
-        android:layout_height="132dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="395dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="101dp"
-        android:background="@drawable/vocefez" />
+        android:layout_marginTop="57dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/emoticon"
+            android:layout_width="94dp"
+            android:layout_height="92dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/final_triste" />
+
+        <TextView
+            android:id="@+id/vocefez"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:hint="hghg"
+            android:text="você fez"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#00A0DD"
+            android:textSize="40dp" />
+
+        <TextView
+            android:id="@+id/textScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/roboto_condensed_bold"
+            android:hint="hghg"
+            android:text="10 pontos!"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="#00A0DD"
+            android:textSize="60dp" />
+
+        <TextView
+            android:id="@+id/frasepontuacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/roboto_light"
+            android:gravity="center"
+            android:hint="hghg"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20dp" />
+    </LinearLayout>
+
 
     <View
         android:layout_width="322dp"
         android:layout_height="1dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="164dp"
-        android:background="@android:color/darker_gray"
+        android:layout_marginBottom="201dp"
+        android:background="#1d1d1d"
         android:focusable="false" />
 
 
@@ -85,7 +128,7 @@
         android:layout_height="51dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="99dp"
+        android:layout_marginBottom="136dp"
 
         android:orientation="horizontal">
 
@@ -116,6 +159,7 @@
                 android:layout_height="49dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+
                 android:layout_marginBottom="13dp"
                 app:srcCompat="@drawable/fb_designer" />
 
@@ -141,6 +185,40 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_refazer"
+            android:layout_width="146dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/button"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-141dp"
+            android:background="@drawable/final_refazer"
+            android:onClick="onClick"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_irsite"
+            android:layout_width="177dp"
+            android:layout_height="39dp"
+            android:layout_below="@+id/button"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="-141dp"
+            android:background="@drawable/final_irsite"
+            android:onClick="onClick"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
 
 
 

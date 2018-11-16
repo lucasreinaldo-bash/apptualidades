@@ -2,22 +2,18 @@ package vostore.apptualidade;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
-import android.widget.Toast;
-import android.view.MenuItem;
 
 import vostore.apptualidade.Simulado.QuizActivity;
 
-public class Site extends AppCompatActivity {
+public class SitePrincipal extends AppCompatActivity {
 
     private ImageButton voltar;
 
@@ -25,43 +21,49 @@ public class Site extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_site);
+        setContentView(R.layout.activity_site_principal);
 
        // android.support.v7.app.ActionBar bar = getSupportActionBar();
        // bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF8F00")));
         Bundle extras = getIntent().getExtras();
         voltar = findViewById(R.id.voltarapp);
-          mWebView = (WebView) findViewById(R.id.site);
         //Recebendo informação de outra Activity
-        if(null != getIntent()){
-            /** Pegamos o VALOR_1**/
-           final String site = getIntent().getStringExtra("site");
+
+        Intent intent = getIntent();
+        int codigo = intent.getIntExtra("codigo", 0);
+
+        mWebView = (WebView) findViewById(R.id.site);
+
+
+
+
 
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl(site);
+        mWebView.loadUrl("http://apptualidades.com.br/");
         mWebView.setWebViewClient(new HelloWebViewClient());
-        }
 
 
-
-          voltar.setOnClickListener(new View.OnClickListener() {
+        voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              onBackPressed();
+                voltar.setBackgroundResource(R.drawable.btnvoltarapp2);
+                Intent intent = new Intent(SitePrincipal.this, Inicio.class);
+                startActivity(intent);
+                finish();
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
 
-
-
-
-
-
+        Intent intent = new Intent(SitePrincipal.this, QuizActivity.class);
+        startActivity(intent);
+        finish();
 
     }
-
 
     private class HelloWebViewClient extends WebViewClient {
 
@@ -103,12 +105,4 @@ public class Site extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
 
     }
-     @Override
-    public void onBackPressed() {
-
-     super.onBackPressed();
-
-
-    }
-
 }

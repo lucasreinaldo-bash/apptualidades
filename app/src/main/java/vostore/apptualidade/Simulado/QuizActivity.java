@@ -15,28 +15,32 @@ import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import vostore.apptualidade.Inicio;
 import vostore.apptualidade.R;
 import vostore.apptualidade.Site;
+import android.view.MenuItem;
 
 
 public class QuizActivity extends AppCompatActivity {
 
 
     private QuestionBank mQuestionLibrary = new QuestionBank();
-    private TextView mScoreView;   // view for current total score
+    public TextView mScoreView;   // view for current total score
     private TextView mQuestionView,mQuestionView2;  //current question to answer
     private TextView resposta_certa,resposta_descricao;
-    private Button leia,btnAvancar;
+    private Button HG,btnAvancar;
     private ImageView questao,progressBar;
+    private ImageView resp_certa;
     private Button mButtonChoice1; // multiple choice 1 for mQuestionView
     private Button mButtonChoice2; // multiple choice 2 for mQuestionView
     private Button mButtonChoice3; // multiple choice 3 for mQuestionView
     private Button mButtonChoice4; // multiple choice 4 for mQuestionView
-    private Button questao6_2, questao6_4; // multiple choice 4 for mQuestionView
+    private Button questao6_2,leia, questao6_4; // multiple choice 4 for mQuestionView
+    private ScrollView scroolquestion;
     private String mAnswer;  // correct answer for question in mQuestionView
-    private int mScore = 0; 
+    public int mScore = 0;
     private int mQuestionNumber = 0; // current question number
     private int quantidade =1;
     private int question = 2;
@@ -44,6 +48,9 @@ public class QuizActivity extends AppCompatActivity {
     public LinearLayout linear,linear2,linear3;
     private MediaPlayer mp1, mp2;
     private LinearLayout linear6;
+     private static final String TAG = "FACELOG";
+
+      int STATE_SCORE ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +60,8 @@ public class QuizActivity extends AppCompatActivity {
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FF8F00")));
 */
      //Fazendo Cast
+
+        scroolquestion = findViewById(R.id.scroolviewquestion);
         progressBar = findViewById(R.id.progress);
         questao = findViewById(R.id.questao_id);
         linear2 = findViewById(R.id.linear_id2);
@@ -62,6 +71,7 @@ public class QuizActivity extends AppCompatActivity {
         mScoreView = findViewById(R.id.score);
          mQuestionView = findViewById(R.id.question);
          mQuestionView2 = findViewById(R.id.questionparte2);
+         resp_certa = findViewById(R.id.resp_certa);
 
          questao6_2 = findViewById(R.id.questao6_2);
          questao6_4 = findViewById(R.id.questao6_4);
@@ -98,84 +108,99 @@ public class QuizActivity extends AppCompatActivity {
         leia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 mScore = mScore + 5;
 
                 switch (mQuestionNumber) {
+
+                    case 0:
+
+                        break;
                     case 1:
 
-                        cod = cod + 10;
-                        Intent intent = new Intent(QuizActivity.this, HighestScoreActivity.class);
-                        intent.putExtra("codigo",cod);
+                        String site1="http://apptualidades.com.br/agrotoxicos/";
+                        Intent intent = new Intent(QuizActivity.this, Site.class);
+                        intent.putExtra("site","http://apptualidades.com.br/agrotoxicos/");
                         startActivity(intent);
-                        finish();
-                        overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+
+
+
+
+
+                        //overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
                         break;
 
                     case 2:
-                        cod = cod + 2;
+
                         Intent intent2 = new Intent(QuizActivity.this, Site.class);
+                        intent2.putExtra("site"," http://apptualidades.com.br/envelhecimento-populacional/");
                         startActivity(intent2);
+
+
+
                         overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+
 
                         break;
                     case 3:
+
                         Intent intent3 = new Intent(QuizActivity.this, Site.class);
+                        intent3.putExtra("site","http://apptualidades.com.br/crise-venezuelana/");
                         startActivity(intent3);
-                        finish();
 
                         break;
 
                     case 4:
+
                         Intent intent4 = new Intent(QuizActivity.this, Site.class);
+                        intent4.putExtra("site","http://apptualidades.com.br/martin-luther-king/");
                         startActivity(intent4);
-                        finish();
 
                         break;
                     case 5:
+
                         Intent intent5 = new Intent(QuizActivity.this, Site.class);
+                        intent5.putExtra("site","http://apptualidades.com.br/febre-amarela/");
                         startActivity(intent5);
-                        finish();
 
                         break;
 
                     case 6:
-                        Intent intent6 = new Intent(QuizActivity.this, Site.class);
+                              Intent intent6 = new Intent(QuizActivity.this, Site.class);
+                        intent6.putExtra("site","http://apptualidades.com.br/greve-dos-caminhoneiros/");
                         startActivity(intent6);
-                        finish();
 
                         break;
                     case 7:
-                        Intent intent7= new Intent(QuizActivity.this, Site.class);
+                            Intent intent7 = new Intent(QuizActivity.this, Site.class);
+                        intent7.putExtra("site","http://apptualidades.com.br/crise-no-sistema-penitenciario/");
                         startActivity(intent7);
-                        finish();
 
                         break;
 
                     case 8:
-                        Intent intent8 = new Intent(QuizActivity.this, Site.class);
+                            Intent intent8 = new Intent(QuizActivity.this, Site.class);
+                        intent8.putExtra("site","http://apptualidades.com.br/relacao-nuclear/");
                         startActivity(intent8);
-                        finish();
 
                         break;
                     case 9:
-                        Intent intent9= new Intent(QuizActivity.this, Site.class);
+                            Intent intent9 = new Intent(QuizActivity.this, Site.class);
+                        intent9.putExtra("site","http://apptualidades.com.br/crise-venezuelana/");
                         startActivity(intent9);
-                        finish();
 
                         break;
 
                     case 10:
-                        Intent intent10 = new Intent(QuizActivity.this, Site.class);
+                           Intent intent10 = new Intent(QuizActivity.this, Site.class);
+                        intent10.putExtra("site","http://apptualidades.com.br/malala-yousafazai-no-brasil/");
                         startActivity(intent10);
-                        finish();
 
                         break;
                 }
 
-                Intent intent = new Intent(QuizActivity.this, Site.class);
-                startActivity(intent);
-                finish();
+
 
             }
         });
@@ -222,16 +247,20 @@ public class QuizActivity extends AppCompatActivity {
         // check if we are not outside array bounds for questions
         if (mQuestionNumber < mQuestionLibrary.getLength()) {
 
+            scroolquestion.pageScroll(View.FOCUS_UP);
             switch (mQuestionNumber){
                 case 0:
                     mQuestionView.setVisibility(View.VISIBLE);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     mQuestionView2.setVisibility(View.GONE);
+                    resp_certa.setBackgroundResource(R.drawable.resp_1);
 
                     break;
 
                 case 1:
                     //mQuestionView.setVisibility(View.VISIBLE);
+                    resp_certa.getLayoutParams().height = 280;
+                    resp_certa.setBackgroundResource(R.drawable.resp_2);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable1= getResources().getDrawable(R.drawable.progress2);
                     //Drawable questao2= getResources().getDrawable(R.drawable.question2);
@@ -239,6 +268,8 @@ public class QuizActivity extends AppCompatActivity {
                     progressBar.setImageDrawable(drawable1);
                     break;
                 case 2:
+                    resp_certa.getLayoutParams().height = 260;
+                    resp_certa.setBackgroundResource(R.drawable.resp_3);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     questao.setVisibility(View.VISIBLE);
                     Drawable drawable2= getResources().getDrawable(R.drawable.progress3);
@@ -250,7 +281,8 @@ public class QuizActivity extends AppCompatActivity {
 
                     break;
                 case 3:
-
+                    resp_certa.getLayoutParams().height = 220;
+                  resp_certa.setBackgroundResource(R.drawable.resp_4);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable3= getResources().getDrawable(R.drawable.progress4);
                     progressBar.setImageDrawable(drawable3);
@@ -259,6 +291,8 @@ public class QuizActivity extends AppCompatActivity {
                     mQuestionView2.setVisibility(View.GONE);
                     break;
                 case 4:
+                    resp_certa.getLayoutParams().height = 220;
+                    resp_certa.setBackgroundResource(R.drawable.resp_5);
                     mQuestionView.setVisibility(View.GONE);
                     questao.setVisibility(View.VISIBLE);
                     Drawable questao4= getResources().getDrawable(R.drawable.img_questao5);
@@ -269,6 +303,8 @@ public class QuizActivity extends AppCompatActivity {
                     progressBar.setImageDrawable(drawable4);
                     break;
                 case 5:
+                    resp_certa.getLayoutParams().height = 240;
+                    resp_certa.setBackgroundResource(R.drawable.resp_6);
                     mQuestionView.setVisibility(View.VISIBLE);
                     questao.setVisibility(View.GONE);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
@@ -279,30 +315,61 @@ public class QuizActivity extends AppCompatActivity {
                     mQuestionView2.setText("Quais alternativas são verdadeiras?");
                     break;
                 case 6:
-                    linear.setVisibility(View.GONE);
+                    resp_certa.setBackgroundResource(R.drawable.resp_7);
+                    questao.setVisibility(View.VISIBLE);
+                    linear6.setVisibility(View.GONE);
                     Drawable drawable6= getResources().getDrawable(R.drawable.progress7);
                     progressBar.setImageDrawable(drawable6);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    mQuestionView2.setText("O Brasil tem a 3ª maior população carcerária do mundo.A alta taxa de prisões pode ser explicada pela");
+                    Drawable questao6= getResources().getDrawable(R.drawable.img_questao7);
+                    questao.setBackground(questao6);
                     break;
                 case 7:
+                    resp_certa.setBackgroundResource(R.drawable.resp_8);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    questao.getLayoutParams().height = 700;
+                    Drawable questao7= getResources().getDrawable(R.drawable.img_questao8);
+                    questao.setBackground(questao7);
                     Drawable drawable7= getResources().getDrawable(R.drawable.progress8);
                     progressBar.setImageDrawable(drawable7);
+                    mQuestionView2.setText("Com relação ao programa nuclear norte-coreano.Está correto afirmar que:");
                     break;
                 case 8:
+                    resp_certa.setBackgroundResource(R.drawable.resp_9);
+                    mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
+                    mQuestionView2.setText("Uma série de fatores culminou na crise humanitária da Venezuela, mas o que desencadeou o problema foi a:");
+                    questao.getLayoutParams().height = 240;
+                    Drawable questao8= getResources().getDrawable(R.drawable.img_questao9);
+                    questao.setBackground(questao8);
                     Drawable drawable8= getResources().getDrawable(R.drawable.progress9);
                     progressBar.setImageDrawable(drawable8);
                     break;
                 case 9:
+                    resp_certa.setBackgroundResource(R.drawable.resp_10);
+                    Drawable questao9= getResources().getDrawable(R.drawable.img_questao10);
+                    questao.setBackground(questao9);
+                    mQuestionView.setVisibility(View.GONE);
+                    mQuestionView2.setText("Após ser baleada aos 15 anos pelo talibã, no Afeganistão, enquanto lutava pelo direito de estudar, a ativista Malala Yousafazai começou a percorrer o mundo à favor da luta pelo direito à educação. Em 2018 ela fez uma visita ao Brasil, onde é correto afirmar que:");
                     Drawable drawable9= getResources().getDrawable(R.drawable.progress10);
                     progressBar.setImageDrawable(drawable9);
                     break;
 
+
             }
 
+            questao6_2.setBackgroundResource(R.drawable.btn_questao6);
+            questao6_4.setBackgroundResource(R.drawable.btn_questao6);
+            questao6_2.setTextColor(getResources().getColor(R.color.nomeBotoes));
+            questao6_4.setTextColor(getResources().getColor(R.color.nomeBotoes));
 
 
 
-            btnAvancar.setText("QUESTÃO "+ question);
-
+            if (question <= 10)
+                btnAvancar.setText("QUESTÃO "+ question);
+            else{
+                btnAvancar.setText("RESULTADO");
+            }
 
 
             linear.setVisibility(View.INVISIBLE);
@@ -356,6 +423,10 @@ public class QuizActivity extends AppCompatActivity {
 
             answer.setBackgroundResource(R.drawable.botao_quiz);
             answer.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.colorWhite));
+            questao6_2.setBackgroundResource(R.drawable.botao_quiz);
+            questao6_4.setBackgroundResource(R.drawable.botao_quiz);
+            questao6_2.setTextColor(getResources().getColor(R.color.colorWhite));
+            questao6_4.setTextColor(getResources().getColor(R.color.colorWhite));
 
 
             linear.setVisibility(View.VISIBLE);
@@ -364,7 +435,7 @@ public class QuizActivity extends AppCompatActivity {
             switch (mQuestionNumber) {
 
                 case 0:
-                    //resposta_descricao.setText(R.string.descricao_1);
+
                     break;
                 case 1:
 
@@ -414,28 +485,31 @@ public class QuizActivity extends AppCompatActivity {
 
 
         } else {
+
+            questao6_2.setBackgroundResource(R.drawable.botao_quiz);
+            questao6_4.setBackgroundResource(R.drawable.botao_quiz);
+            questao6_2.setTextColor(getResources().getColor(R.color.colorWhite));
+            questao6_4.setTextColor(getResources().getColor(R.color.colorWhite));
             //mp2.start();
             linear.setVisibility(View.VISIBLE);
             switch (mQuestionNumber) {
 
                 case 0:
-                    //resposta_descricao.setText(R.string.descricao_1);
+
                     break;
                 case 1:
 
+
                     break;
                 case 2:
-
                     break;
                 case 3:
-
                     break;
                 case 4:
 
                     break;
                 case 5:
-                    questao6_2.setBackgroundResource(R.drawable.botao_quiz);
-                    questao6_4.setBackgroundResource(R.drawable.botao_quiz);
+
                     break;
                 case 6:
 
@@ -499,7 +573,7 @@ public class QuizActivity extends AppCompatActivity {
     public void onBackPressed () {
         Intent intent = new Intent(QuizActivity.this, Inicio.class);
         startActivity(intent);
-        finish();
+
 
     }
 
@@ -511,27 +585,30 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
 
-
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
+
     }
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
+
         // Save UI state changes to the savedInstanceState.
         // This bundle will be passed to onCreate if the process is
         // killed and restarted.
-        savedInstanceState.putBoolean("MyBoolean", true);
-        savedInstanceState.putDouble("myDouble", 1.9);
-        savedInstanceState.putInt("MyInt",1);
-        savedInstanceState.putString("MyString", "Welcome back to Android");
+
+        savedInstanceState.putInt("questao",mQuestionNumber);
+
         // etc.
+         super.onSaveInstanceState(savedInstanceState);
     }
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    // Always call the superclass so it can restore the view hierarchy
+    super.onRestoreInstanceState(savedInstanceState);
+
+    // Restore state members from saved instance
+    mQuestionNumber = savedInstanceState.getInt("questao");
+}
 }

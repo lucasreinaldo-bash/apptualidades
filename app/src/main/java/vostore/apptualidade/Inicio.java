@@ -92,11 +92,11 @@ public class Inicio extends AppCompatActivity {
                         break;
 
                     case R.id.nav_sobre:
-                        selectedFragment = sobreFragment.newInstance();
+                        selectedFragment = SobreFragment.newInstance();
                         break;
 
                     case R.id.nav_sair:
-                        selectedFragment = simuladoFragment.newInstance();
+                       onBackPressed();
                         break;
 
                 }
@@ -128,12 +128,31 @@ public class Inicio extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        Intent intent = new Intent(Inicio.this, Login.class);
-        startActivity(intent);
-        finish();
+      signOut();
 
 
     }
 
+    private void signOut() {
+        // Firebase sign out
 
+        mAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        mAuth.signOut();
+        com.facebook.login.LoginManager.getInstance().logOut();
+
+        // Google sign out
+
+
+        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
+                new ResultCallback<Status>() {
+                    @Override
+                    public void onResult(@NonNull Status status) {
+                        //updateUI(null);
+                        Intent intent = new Intent(Inicio.this, Login.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+    }
 }

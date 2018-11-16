@@ -66,6 +66,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
     private GoogleApiClient googleApiClient;
     private CallbackManager mCallbackManager;
     private static final String TAG = "FACELOG";
+
     private FirebaseAuth mAuth,firebaseAuth;
     private DatabaseReference databaseReference;
     private EditText senhausuario,emailusuario;
