@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaCas;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,6 +59,7 @@ public class SimuladoFragment extends Fragment implements GoogleApiClient.OnConn
         SimuladoFragment simuladoFragment = new SimuladoFragment();
         return simuladoFragment;
     }
+
 
 
     @Override
@@ -139,7 +141,27 @@ public class SimuladoFragment extends Fragment implements GoogleApiClient.OnConn
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        googleApiClient.stopAutoManage(getActivity());
+        googleApiClient.disconnect();
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (googleApiClient != null && googleApiClient.isConnected()) {
+            googleApiClient.stopAutoManage((getActivity()));
+            googleApiClient.disconnect();
+        }
+    }
 }
 
 

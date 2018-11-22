@@ -114,25 +114,12 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
 
-        LoginManager.getInstance().logOut();
 
 
-        try {
-            PackageInfo info = getPackageManager().getPackageInfo(
-                    getPackageName(),
-                    PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
-            }
-        }
-        catch (PackageManager.NameNotFoundException e) {
+        //LoginManager.getInstance().logOut();
 
-        }
-        catch (NoSuchAlgorithmException e) {
 
-        }
+
 
 
 
@@ -141,6 +128,8 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
             @Override
             public void onClick(View view) {
                 loginGoogle();
+
+
             }
         });
         //Ação do Botão Facebook
@@ -188,12 +177,12 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
 
 
 
- /*   private void verificarUsuarioLogado(){
+  private void verificarUsuarioLogado(){
         mAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
         if(mAuth.getCurrentUser()!= null ){
            updateUI();
         }
-    } */
+    }
 
 
 
@@ -395,5 +384,13 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
 
-}
+    }
+
+
+
+
+    }

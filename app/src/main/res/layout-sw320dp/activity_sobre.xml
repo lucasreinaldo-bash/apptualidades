@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    tools:context=".Sobre">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sobre_app_logo"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="361dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="355dp"
+        android:layout_height="330dp"
+        android:layout_above="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/roboto_thin"
+        android:gravity="bottom"
+        android:padding="10dp"
+        android:text="O Apptualidades, como indica o nome, é um aplicativo de atualidades em formato de game para vestibulandos. Aqui você simula questões que podem ser abordadas nos vestibulares - mas, calma! Não tem fórmula mágica, só muita pesquisa.
+
+A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no vestibular 10/10. Por isso, também criamos uma série de conteúdos pra você se aprofundar nos temas mais importantes (sem cair naquela chatice).
+
+O Apptualidades é o Trabalho de Conclusão de Curso (o famigerado TCC) criado por quatro estudantes de jornalismo da Universidade Metodista de São Paulo - Amanda Leonelli, Larissa Ribeiro, Nathalia Torres e Thaís Augusto. A gente sabe que o vestibular é pesado, mas estudar não precisa ser assim tão chato, né?"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="226dp"
+        android:layout_height="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_saiba"
+        android:text="" />
+</RelativeLayout>

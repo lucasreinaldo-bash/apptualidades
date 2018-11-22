@@ -23,6 +23,30 @@
           }
         },
         {
+          "client_id": "78402381661-v2vj3k0j7ckn0206n7tlmeg3vjiks9a1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vostore.apptualidade",
+            "certificate_hash": "3f111a3a456e14b1eee3fe7f405c1611551aa6a8"
+          }
+        },
+        {
+          "client_id": "78402381661-7sn0qkpfcabddt5b4lmr35t38avmmm0b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vostore.apptualidade",
+            "certificate_hash": "523d9e08d896f73834496dc71349c0ff4bde65bc"
+          }
+        },
+        {
+          "client_id": "78402381661-3ppkvn7udajjeck3vp59qg7b0ajptsq2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vostore.apptualidade",
+            "certificate_hash": "212c9a048afb649fa69454c21884822ece8571f3"
+          }
+        },
+        {
           "client_id": "78402381661-8u8dqn9iu5v8vtfgfuu0dfjh8e0hjnqa.apps.googleusercontent.com",
           "client_type": 3
         }

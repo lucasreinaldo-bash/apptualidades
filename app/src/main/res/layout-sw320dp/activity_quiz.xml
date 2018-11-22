@@ -292,31 +292,22 @@
                     android:visibility="visible">
 
 
-                    <WebView
-                        android:id="@+id/descricao_resposta"
-                        android:layout_width="217dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:visibility="gone"
-                        android:layout_marginRight="5dp" />
-
                     <ImageView
                         android:id="@+id/resp_certa"
                         android:layout_width="226dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="130dp"
+                        android:layout_gravity="top"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:background="@drawable/resp_1" />
+                        android:background="@drawable/resp_4" />
 
 
                     <LinearLayout
                         android:id="@+id/linear_id3"
                         android:layout_width="109dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
 
                         android:layout_gravity="center_vertical|center"
-                        android:layout_marginTop="20dp"
                         android:gravity="right"
                         android:orientation="vertical">
 
@@ -326,7 +317,6 @@
                             android:layout_height="40dp"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginRight="10dp"
                             android:background="@drawable/botaopequeno"
                             android:padding="10dp"
@@ -340,9 +330,8 @@
                             android:layout_height="40dp"
                             android:layout_alignParentBottom="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginBottom="13dp"
+                            android:layout_marginBottom="50dp"
                             android:layout_marginRight="10dp"
-                            android:layout_marginTop="5dp"
                             android:background="@drawable/botaopequeno"
                             android:padding="10dp"
                             android:text="@string/btn_questao2"

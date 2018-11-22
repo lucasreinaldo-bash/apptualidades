@@ -22,7 +22,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
 
-import vostore.apptualidade.Fragments.FavoritosFragment;
+
 import vostore.apptualidade.Fragments.SairFragment;
 import vostore.apptualidade.Fragments.SimuladoFragment;
 import vostore.apptualidade.Fragments.SobreFragment;
@@ -32,7 +32,7 @@ public class Inicio extends AppCompatActivity {
     BottomNavigationView mNavigation;
     private FrameLayout mFrame;
 
-    private FavoritosFragment favoritosFragment;
+
     private SimuladoFragment simuladoFragment;
     private SobreFragment sobreFragment;
     private SairFragment sairFragment;
@@ -47,7 +47,7 @@ public class Inicio extends AppCompatActivity {
 
 
         simuladoFragment = new SimuladoFragment();
-        favoritosFragment = new FavoritosFragment();
+
         sobreFragment = new SobreFragment();
         sairFragment = new SairFragment();
 
@@ -62,23 +62,7 @@ public class Inicio extends AppCompatActivity {
 
         //Método importantíssimo
         //Usado para aumentar o tamanho dos icones do Navigation
-        BottomNavigationMenuView menuView = (BottomNavigationMenuView)
-                mNavigation.getChildAt(0);
-        for (int i = 0; i < menuView.getChildCount(); i++) {
-            final View iconView =
-                    menuView.getChildAt(i).findViewById(android.support.design.R.id.icon);
-            final ViewGroup.LayoutParams layoutParams =
-                    iconView.getLayoutParams();
-            final DisplayMetrics displayMetrics =
-                    getResources().getDisplayMetrics();
-            layoutParams.height = (int)
-                    TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50,
-                            displayMetrics);
-            layoutParams.width = (int)
-                    TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50,
-                            displayMetrics);
-            iconView.setLayoutParams(layoutParams);
-        }
+
         mNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -96,7 +80,8 @@ public class Inicio extends AppCompatActivity {
                         break;
 
                     case R.id.nav_sair:
-                       onBackPressed();
+
+                        selectedFragment = SairFragment.newInstance();
                         break;
 
                 }
@@ -128,31 +113,12 @@ public class Inicio extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-      signOut();
+        Intent intent = new Intent(Inicio.this, Login.class);
+        startActivity(intent);
+        finish();
 
 
     }
 
-    private void signOut() {
-        // Firebase sign out
 
-        mAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
-        mAuth.signOut();
-        com.facebook.login.LoginManager.getInstance().logOut();
-
-        // Google sign out
-
-
-        Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
-                new ResultCallback<Status>() {
-                    @Override
-                    public void onResult(@NonNull Status status) {
-                        //updateUI(null);
-                        Intent intent = new Intent(Inicio.this, Login.class);
-                        startActivity(intent);
-                    }
-                });
-
-
-    }
 }

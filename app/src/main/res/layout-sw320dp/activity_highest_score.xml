@@ -48,6 +48,7 @@
         android:textColor="@android:color/black" />
 
     <LinearLayout
+        android:id="@+id/linear_resultado"
         android:layout_width="match_parent"
         android:layout_height="395dp"
         android:layout_alignParentTop="true"
@@ -63,6 +64,7 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/final_triste" />
+
 
         <TextView
             android:id="@+id/vocefez"
@@ -102,20 +104,23 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="false"
             android:layout_centerVertical="false"
+            android:layout_marginBottom="12dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:hint="hghg"
+            android:hint="hghsadsadsad sadsa dasdsa dada sdasdas aa dasd as asd adasd asd as dasd as das dasd asd dsa dsad as dasd sad"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="20dp" />
+            android:textSize="15dp" />
     </LinearLayout>
 
 
     <View
+        android:id="@+id/views"
         android:layout_width="322dp"
         android:layout_height="1dp"
+        android:layout_above="@+id/frasepontuacao"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="201dp"
@@ -124,12 +129,14 @@
 
 
     <LinearLayout
+        android:id="@+id/compartilhar"
         android:layout_width="321dp"
         android:layout_height="51dp"
+        android:layout_above="@+id/views"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
 
+        android:layout_marginBottom="136dp"
         android:orientation="horizontal">
 
         <TextView
@@ -146,6 +153,7 @@
             android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/compartilhar_btn"
             android:layout_width="117dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -188,6 +196,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="55dp"
+        android:layout_above="@+id/compartilhar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="54dp"

@@ -46,7 +46,7 @@ import static vostore.apptualidade.Consts.Const.RC_SIGN_IN;
 
 public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private EditText txtNome,txtEmail,txtSenha,txtSenhaRepetida,codigo,txtsobrenome,txtuserName;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth, mAuth2;
     private Button btnRegistrar,btnGoogle, btnFacebook;
     private FirebaseDatabase database;
     private GoogleApiClient googleApiClient;
@@ -71,9 +71,9 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
         // Instaciando o servidor
         // Instanciando servidor
         mAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        mAuth2 = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
         firebaseAuth = ConfiguracaoFirebase.getFirebaseAutenticacao();
-
 
         //Configurações do Login da Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -114,7 +114,7 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
 
                 if(isValidEmail(email) && validarContraseña() && validarNombre(nome)){
                     final String senha = txtSenha.getText().toString();
-                    mAuth.createUserWithEmailAndPassword(email, senha)
+                    mAuth2.createUserWithEmailAndPassword(email, senha)
                             .addOnCompleteListener(Cadastro.this, new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -126,7 +126,7 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
                                         usuario.setEmail(email);
                                         usuario.setSenha(senhausuario);
                                         usuario.setNomeCompleto(nomecompleto);
-                                        FirebaseUser currentUser = mAuth.getCurrentUser();
+                                        FirebaseUser currentUser = mAuth2.getCurrentUser();
                                         DatabaseReference reference = database.getReference("Usuario/"+currentUser.getUid());
                                         reference.setValue(usuario);
                                         Intent intent = new Intent(Cadastro.this, Inicio.class);

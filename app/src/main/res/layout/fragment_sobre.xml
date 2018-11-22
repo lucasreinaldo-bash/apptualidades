@@ -16,50 +16,36 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="298dp"
-            android:src="@drawable/sobre_app_logo" />
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+            android:layout_height="254dp"
+            android:layout_gravity="top"
+            android:background="@drawable/sobre_app_logo" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-        <ImageView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/sobre_texto" />
+            android:layout_height="234dp">
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/roboto_condensed_light"
-            android:paddingBottom="120dp"
-            android:text="O Apptualidades, como indica o nome, é um aplicativo de atualidades em formato de game para vestibulandos. Aqui você simula questões que podem ser abordadas nos vestibulares - mas, calma! Não tem fórmula mágica, só muita pesquisa.
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:paddingLeft="20dp">
 
-A gente não quer só testar seu conhecimento. Queremos te ajudar a chegar no vestibular 10/10. Por isso, também criamos uma série de conteúdos pra você se aprofundar nos temas mais importantes (sem cair naquela chatice).
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="300dp"
+                    android:background="@drawable/sobre_textooo"
+                    android:baselineAligned="false" />
+            </LinearLayout>
+        </ScrollView>
 
-O Apptualidades é o Trabalho de Conclusão de Curso (o famigerado TCC) criado por quatro estudantes de jornalismo da Universidade Metodista de São Paulo - Amanda Leonelli, Larissa Ribeiro, Nathalia Torres e Thaís Augusto. A gente sabe que o vestibular é pesado, mas estudar não precisa ser assim tão chato, né?"
-            android:textAllCaps="true"
-            android:textColor="@android:color/darker_gray"
-            android:visibility="gone" />
-    </LinearLayout>
-</ScrollView>
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/saibamais"
             android:layout_width="298dp"
             android:layout_height="74dp"
             android:layout_gravity="center"
             android:background="@drawable/btnsaiba"
-            android:gravity="bottom|end" />
+            android:gravity="bottom" />
     </LinearLayout>
 
 

@@ -17,7 +17,7 @@
         android:background="@drawable/navigation"
         app:labelVisibilityMode="unlabeled"
 
-        app:menu="@menu/nav_items" />
+        app:menu="@menu/navigation" />
 
 
     <FrameLayout

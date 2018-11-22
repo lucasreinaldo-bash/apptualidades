@@ -7,9 +7,11 @@
     tools:context=".Fragments.SairFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="256dp"
+        android:layout_height="294dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logooficial" />
 
 </FrameLayout>

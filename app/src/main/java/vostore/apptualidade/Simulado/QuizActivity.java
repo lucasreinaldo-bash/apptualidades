@@ -87,11 +87,6 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-        WebView webView = findViewById(R.id.descricao_resposta);
-        String text;
-        text = "<html><style type=\"text/css\" > @font=face { font-family: MyFont; src: url (\"file:///android_font/roboto_light.ttf\")  } body { font-family: MyFont;  font-size: 12px;  text-align: justify;   }  <p> { color: #787879;}</style><body><p color:#787879 align=\"justify\"><b>Resposta Certa:</b>"
-        + getString(R.string.descricao_1) + "</p> </body></html>";
-        webView.loadData(text,"text/html;charset=UTF-8",null);
 
 
 
@@ -139,7 +134,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
 
-                        overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
+                        //overridePendingTransition(R.anim.bottom_in, R.anim.top_out);
 
 
                         break;
@@ -250,6 +245,7 @@ public class QuizActivity extends AppCompatActivity {
             scroolquestion.pageScroll(View.FOCUS_UP);
             switch (mQuestionNumber){
                 case 0:
+
                     mQuestionView.setVisibility(View.VISIBLE);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     mQuestionView2.setVisibility(View.GONE);
@@ -259,7 +255,7 @@ public class QuizActivity extends AppCompatActivity {
 
                 case 1:
                     //mQuestionView.setVisibility(View.VISIBLE);
-                    resp_certa.getLayoutParams().height = 280;
+
                     resp_certa.setBackgroundResource(R.drawable.resp_2);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable1= getResources().getDrawable(R.drawable.progress2);
@@ -268,7 +264,7 @@ public class QuizActivity extends AppCompatActivity {
                     progressBar.setImageDrawable(drawable1);
                     break;
                 case 2:
-                    resp_certa.getLayoutParams().height = 260;
+                   // resp_certa.getLayoutParams().height = 260;
                     resp_certa.setBackgroundResource(R.drawable.resp_3);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     questao.setVisibility(View.VISIBLE);
@@ -281,8 +277,8 @@ public class QuizActivity extends AppCompatActivity {
 
                     break;
                 case 3:
-                    resp_certa.getLayoutParams().height = 220;
-                  resp_certa.setBackgroundResource(R.drawable.resp_4);
+
+                  resp_certa.setBackgroundResource(R.drawable.respostacerta4);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable3= getResources().getDrawable(R.drawable.progress4);
                     progressBar.setImageDrawable(drawable3);
@@ -291,8 +287,8 @@ public class QuizActivity extends AppCompatActivity {
                     mQuestionView2.setVisibility(View.GONE);
                     break;
                 case 4:
-                    resp_certa.getLayoutParams().height = 220;
-                    resp_certa.setBackgroundResource(R.drawable.resp_5);
+                    resp_certa.getLayoutParams().height = 130;
+                    resp_certa.setBackgroundResource(R.drawable.respostacerta556);
                     mQuestionView.setVisibility(View.GONE);
                     questao.setVisibility(View.VISIBLE);
                     Drawable questao4= getResources().getDrawable(R.drawable.img_questao5);
@@ -303,7 +299,7 @@ public class QuizActivity extends AppCompatActivity {
                     progressBar.setImageDrawable(drawable4);
                     break;
                 case 5:
-                    resp_certa.getLayoutParams().height = 240;
+                    resp_certa.getLayoutParams().height = 300;
                     resp_certa.setBackgroundResource(R.drawable.resp_6);
                     mQuestionView.setVisibility(View.VISIBLE);
                     questao.setVisibility(View.GONE);
@@ -328,8 +324,8 @@ public class QuizActivity extends AppCompatActivity {
                 case 7:
                     resp_certa.setBackgroundResource(R.drawable.resp_8);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
-                    questao.getLayoutParams().height = 700;
-                    Drawable questao7= getResources().getDrawable(R.drawable.img_questao8);
+                    questao.getLayoutParams().height = 1100;
+                    Drawable questao7= getResources().getDrawable(R.drawable.questao8);
                     questao.setBackground(questao7);
                     Drawable drawable7= getResources().getDrawable(R.drawable.progress8);
                     progressBar.setImageDrawable(drawable7);
