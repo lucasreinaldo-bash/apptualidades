@@ -41,6 +41,7 @@ public class SitePrincipal extends AppCompatActivity {
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportZoom(false);
         mWebView.loadUrl("http://apptualidades.com.br/");
         mWebView.setWebViewClient(new HelloWebViewClient());
 

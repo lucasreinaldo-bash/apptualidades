@@ -277,7 +277,7 @@ public class QuizActivity extends AppCompatActivity {
 
                     break;
                 case 3:
-
+                    resp_certa.getLayoutParams().height = 280;
                   resp_certa.setBackgroundResource(R.drawable.respostacerta4);
                     mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
                     Drawable drawable3= getResources().getDrawable(R.drawable.progress4);
@@ -287,7 +287,7 @@ public class QuizActivity extends AppCompatActivity {
                     mQuestionView2.setVisibility(View.GONE);
                     break;
                 case 4:
-                    resp_certa.getLayoutParams().height = 130;
+                    resp_certa.getLayoutParams().height = 220;
                     resp_certa.setBackgroundResource(R.drawable.respostacerta556);
                     mQuestionView.setVisibility(View.GONE);
                     questao.setVisibility(View.VISIBLE);
@@ -558,7 +558,7 @@ public class QuizActivity extends AppCompatActivity {
 
 
             // show current total score for the user
-            vibrar();
+          //  vibrar();
 
            // mp2.start();
             // once user answer the question, we move on to the next one, if any

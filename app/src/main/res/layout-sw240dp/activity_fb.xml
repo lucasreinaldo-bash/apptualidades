@@ -8,17 +8,19 @@
     tools:context=".Site"
     android:background="@drawable/fundoleiamais">
 
-
-    <WebView
-        android:id="@+id/site"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="644dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="4dp">
+        android:layout_height="match_parent">
+        <WebView
+            android:id="@+id/site"
+            android:layout_width="match_parent"
+            android:layout_height="644dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp">
 
-    </WebView>
-
+        </WebView>
+    </ScrollView>
     <ImageButton
         android:id="@+id/voltarapp"
         android:layout_width="206dp"

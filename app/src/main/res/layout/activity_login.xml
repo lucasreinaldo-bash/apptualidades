@@ -66,7 +66,7 @@
                 app:met_floatingLabelTextColor="#242626"
                 app:met_primaryColor="#982360"
                 card_view:met_checkCharactersCountAtBeginning="true"
-                card_view:met_iconRight="@drawable/ic_mensagem" />
+                card_view:met_iconRight="@drawable/msg" />
 
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -84,7 +84,7 @@
                 app:met_floatingLabelText="Senha"
                 app:met_floatingLabelTextColor="#242626"
                 app:met_primaryColor="#982360"
-                card_view:met_iconRight="@drawable/ic_locker" />
+                card_view:met_iconRight="@drawable/lock" />
 
             <View
                 android:id="@+id/view"

@@ -108,7 +108,6 @@
             android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:hint="hghsadsadsad sadsa dasdsa dada sdasdas aa dasd as asd adasd asd as dasd as das dasd asd dsa dsad as dasd sad"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"

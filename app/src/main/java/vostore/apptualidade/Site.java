@@ -40,6 +40,7 @@ public class Site extends AppCompatActivity {
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportZoom(false);
         mWebView.loadUrl(site);
         mWebView.setWebViewClient(new HelloWebViewClient());
         }

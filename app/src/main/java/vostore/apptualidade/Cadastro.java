@@ -120,7 +120,8 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         // Sign in success, update UI with the signed-in user's information
-                                        Toast.makeText(Cadastro.this, "Registro Confirmado. Seja-bem vindo!", Toast.LENGTH_SHORT).show();
+                                        FBToast.successToast(Cadastro.this,"Seja bem-vindo!",FBToast.LENGTH_SHORT);
+
                                         Usuario usuario = new Usuario();
                                         usuario.setNome(nome);
                                         usuario.setEmail(email);
@@ -135,12 +136,12 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
 
                                     } else {
                                         // If sign in fails, display a message to the user.
-                                        Toast.makeText(Cadastro.this, "Erro ao fazer o registro", Toast.LENGTH_SHORT).show();
+                                        FBToast.errorToast(Cadastro.this, "Erro ao fazer o registro", Toast.LENGTH_SHORT);
                                     }
                                 }
                             });
                 }else{
-                    Toast.makeText(Cadastro.this, "Algum erro foi detectado! Está com internet ?", Toast.LENGTH_SHORT).show();
+                    FBToast.errorToast(Cadastro.this, "Algum erro foi detectado! Está com internet ?", Toast.LENGTH_SHORT);
                 }
 
             }
@@ -187,8 +188,8 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
                             FirebaseUser currentUser = firebaseAuth.getCurrentUser();
                             saveUser(currentUser, acct.getEmail());
                         } else
-                            Toast.makeText(Cadastro.this, "Authentication with Google failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            FBToast.errorToast(Cadastro.this, "Authentication with Google failed.",
+                                    Toast.LENGTH_SHORT);
                     }
                 });
     }
@@ -267,7 +268,7 @@ public class Cadastro extends AppCompatActivity implements GoogleApiClient.OnCon
     }
     //Salvar dos do usuário em uma classe
     private void saveUser (FirebaseUser firebaseUser, String email){
-        FBToast.successToast(Cadastro.this,"Login efetuado com sucesso !", FBToast.LENGTH_SHORT);
+        FBToast.successToast(Cadastro.this,"Login efetuado com sucesso!", FBToast.LENGTH_SHORT);
         FirebaseUser currentUser = firebaseUser;
         Preferencias preferencias = new Preferencias(Cadastro.this);
         preferencias.savePreferences(getString(R.string.id_user_app), firebaseUser.getUid());

@@ -82,6 +82,17 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
         //verificarUsuarioLogado();
 
 
+        //Configurações do Login da Google
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+
+        googleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
 
         //Fazendo Cast
 
@@ -102,17 +113,6 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
 
         //Aplicando uma linha inferior ao nome
         cadastre.setPaintFlags(cadastre.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-
-        //Configurações do Login da Google
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        googleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
-                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-                .build();
 
 
 
@@ -263,7 +263,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
                         }
                     });
         } else {
-            Toast.makeText(Login.this,"Erro de Login",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Login.this,"Erro de Login.",Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -323,7 +323,7 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
 
     //Salvar dos do usuário em uma classe
     private void saveUser (FirebaseUser firebaseUser, String email){
-        FBToast.successToast(Login.this,"Login efetuado com sucesso !", FBToast.LENGTH_SHORT);
+        FBToast.successToast(Login.this,"Login efetuado com sucesso!", FBToast.LENGTH_SHORT);
         FirebaseUser currentUser = firebaseUser;
         Preferencias preferencias = new Preferencias(Login.this);
         preferencias.savePreferences(getString(R.string.id_user_app), firebaseUser.getUid());
